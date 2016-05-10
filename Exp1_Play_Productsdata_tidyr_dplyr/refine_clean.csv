@@ -1,0 +1,26 @@
+"company","product_code","product_number","address","city","country","name","full_address","company_philips","company_akzo","company_van_houten","company_unilever","product_smartphone","product_tv","product_laptop","product_tablet"
+"unilever","x","3","Jourestraat 23","arnhem","the netherlands","mevr l.  gokken","Jourestraat 23, arnhem, the netherlands",FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+"unilever","q","4","Jourestraat 24","arnhem","the netherlands","mevr l.  stokken","Jourestraat 24, arnhem, the netherlands",FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+"unilever","q","6","Jourestraat 25","arnhem","the netherlands","mevr l.  rokken","Jourestraat 25, arnhem, the netherlands",FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+"unilever","q","8","Jourestraat 26","arnhem","the netherlands","mevr l.  rokken","Jourestraat 26, arnhem, the netherlands",FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+"akzo","v","43","Leeuwardenweg 178","arnhem","the netherlands","dhr p. bansen","Leeuwardenweg 178, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+"akzo","v","12","Leeuwardenweg 179","arnhem","the netherlands","dhr p. vansen","Leeuwardenweg 179, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+"akzo","x","5","Leeuwardenweg 180","arnhem","the netherlands","dhr p. bransen","Leeuwardenweg 180, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+"akzo","p","34","Leeuwardenweg 181","arnhem","the netherlands","dhr p. janssen","Leeuwardenweg 181, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"akzo","q","5","Leeuwardenweg 182","arnhem","the netherlands","mevr l.  rokken","Leeuwardenweg 182, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+"akzo","q","9","Leeuwardenweg 183","arnhem","the netherlands","mevr l.  lokken","Leeuwardenweg 183, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+"akzo","x","8","Leeuwardenweg 184","arnhem","the netherlands","mevr l.  mokken","Leeuwardenweg 184, arnhem, the netherlands",FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+"philips","p","5","Groningensingel 147","arnhem","the netherlands","dhr p. jansen","Groningensingel 147, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"philips","p","43","Groningensingel 148","arnhem","the netherlands","dhr p. hansen","Groningensingel 148, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"philips","x","3","Groningensingel 149","arnhem","the netherlands","dhr j. Gansen","Groningensingel 149, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+"philips","x","34","Groningensingel 150","arnhem","the netherlands","dhr p. mansen","Groningensingel 150, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+"philips","x","12","Groningensingel 151","arnhem","the netherlands","dhr p. fransen","Groningensingel 151, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+"philips","p","23","Groningensingel 152","arnhem","the netherlands","dhr p. franssen","Groningensingel 152, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"philips","p","56","Delfzijlstraat 54","arnhem","the netherlands","mevr l.  mokken","Delfzijlstraat 54, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"philips","v","67","Delfzijlstraat 55","arnhem","the netherlands","mevr l.  mokken","Delfzijlstraat 55, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+"philips","v","21","Delfzijlstraat 56","arnhem","the netherlands","mevr l.  mokken","Delfzijlstraat 56, arnhem, the netherlands",TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+"van houten","x","45","Delfzijlstraat 57","arnhem","the netherlands","mevr l.  sokken","Delfzijlstraat 57, arnhem, the netherlands",FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+"van houten","v","56","Delfzijlstraat 58","arnhem","the netherlands","mevr l.  wokken","Delfzijlstraat 58, arnhem, the netherlands",FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+"van houten","v","65","Delfzijlstraat 59","arnhem","the netherlands","mevr l.  kokken","Delfzijlstraat 59, arnhem, the netherlands",FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+"van houten","x","21","Delfzijlstraat 60","arnhem","the netherlands","mevr l.  Bokken","Delfzijlstraat 60, arnhem, the netherlands",FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+"van houten","p","23","Delfzijlstraat 61","arnhem","the netherlands","mevr l.  dokken","Delfzijlstraat 61, arnhem, the netherlands",FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
