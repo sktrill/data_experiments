@@ -1,0 +1,65 @@
+Notes
+========================================
+
+#Q1. New Product Launches
+----------------------------------------
+#1a) measure strength of new product launch
+- revenue
+- customers (new v old)
+- avg order size
+- no. of repeat customers
+- frequency or purchase
+* check out issue with paid to blanks in order table
+
+#1b) based on a), summarize recent trends of launch performance - support with data
+- window aggregrate?
+- cohort analysis of customers by first product purchase
+- run metrics above for last few product launches by category
+- IF TIME: run cluster analysis
+
+#1c) areas of opps for new launches
+- measure conversion funnel
+- cart abadonment
+- substitution / complementary products
+- marketing campaign used / channel
+
+
+
+#Q2. New Customer Acq
+----------------------------------------
+#2a) measure strength of new customer acq
+- ltv by channel
+- measure orders by channel by month
+- conversion ratio
+
+#2b) based on a) what are the most valuable channels
+- ?
+
+#2c) what additional data / metrics to measure acq. performance
+- marketing spend, CAC
+
+
+
+#Q3. Customer Segments
+----------------------------------------
+#3a) identify shoe lovers for new email campaign
+- triple join, compare location, gender etc.
+- simple SQL ? or random forrest?
+
+#3b) three lists of users:
+	- shoe (footwear) lovers
+	- sweater lovers
+	- knit top lovers
+	- generalize across all categories
+- generalize sql for all categories (optimize sql, or R it)
+- IF TIME: quick shiny app (if time on friday)
+- IF TIME: build random forrest classification model
+
+
+
+#Q4. design a/b to measure impact of new shoe lover email campaign
+	- include how collect, store data in to order to measure impact
+----------------------------------------
+- ain't no thaang but a chicken wing
+- talkiddy talk talk
+

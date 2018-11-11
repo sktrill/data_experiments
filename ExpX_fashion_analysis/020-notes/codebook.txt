@@ -1,0 +1,32 @@
+recruiting.users {
+	user_id				: integer,	no NULLs, 	PRIMARY_KEY
+ 	discovery_channel_category	: factor, 	no NULLs,	c(direct, email, organic search, other, paid)
+	discovery_channel		: factor, 	NULLs,		c(social, display, search, affiliate, other, NA), 
+					  maps to 'paid' in "discovery_channel_category"
+	discovery_time			: timestamp, 	no NULLs
+	discovery_platform		: factor	no NULLs	c(desktop, mobile)
+	location			: factor	no NULLs	c(US, international)
+	gender				: factor	NULLs, 		c(male, female, other, unisex, NA)
+}
+
+
+recruiting.orders {
+	line_item_id			: integer, 	no NULLs, 	PRIMARY_KEY
+	order_id			: integer, 	no NULLS, 	duplicates mapped to line_item_id
+	completed_at			: timestamp, 	no NULLs
+	user_id				: integer, 	no NULLs, 	maps 1:1 to order_id
+	quantity			: integer, 	no NULLs
+	price				: float, 	no NULLs
+	style_id			: integer, 	no NULLs
+	order_channel			: factor, 	NULLs,		c(social, display, search, affiliate, other, NA), 
+					  maps to 'paid' in "order_channel_category"
+	order_channel_category		: factor, 	no NULLs,	c(direct, email, organic search, other, paid)
+}
+
+
+recruiting.products {
+	style_id			: integer, 	no NULLs, 	PRIMARY_KEY
+	style				: var_char, 	no NULLs
+	category			: factor, 	no NULLs, 	c(sweaters, bags, footwear, bottoms etc.)
+	launch_date			: timestamp, 	no NULLs, 	no time, only date in UTC format
+}

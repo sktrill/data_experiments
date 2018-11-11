@@ -1,0 +1,797 @@
+---
+output:
+  rmarkdown::html_document:
+    theme: yeti
+    highlight: tango
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# load libraries
+library(tidyr)
+library(readr)
+library(dplyr)
+library(stringr)
+library(ggplot2)
+library(chron)
+library(knitr)
+
+
+# load helper functions
+source("helpers.R")
+```
+
+
+## Introduction
+
+Presented below are the project answers and analysis workflow. The project structure is borrowed from a template I use for new data projects. Also of interest: 
+
+* [Executive summary](../Summary.pdf)
+* [List of assumptions](../START.pdf)
+* [Scrum plan](../020-notes/scrum.txt), [code book](../020-notes/codebook.txt), [random project notes](../020-notes/random.txt)
+
+
+
+## Loading and wrangling
+
+Let's start by importing the three data tables from *Mode Analytics*. 
+
+```{r, results='hide', warning=FALSE, message=FALSE}
+# load raw data files from Mode
+orders <- tbl_df(read.csv("../010-data/orders_full.csv", na.strings=c("","NA"), stringsAsFactors = FALSE))
+products <- tbl_df(read.csv("../010-data/products_full.csv", na.strings=c("","NA"), stringsAsFactors = FALSE))
+users <- tbl_df(read.csv("../010-data/users_full.csv", na.strings=c("","NA"), stringsAsFactors = FALSE))
+
+```
+
+Next to prepare the datasets for analysis all columns are converted to the appropriate data types.
+
+```{r, results='hide', warning=FALSE, message=FALSE}
+# peek at the dataset
+dim(orders) #43.5k line item orders
+head(orders, 10)
+dim(products) # 455 unique products
+head(products, 10)
+dim(users) #50k users
+head(users, 10)
+
+# check for NAs
+sum(is.na(orders)) # 37k all in order_channel_category
+sum(is.na(products)) # none
+sum(is.na(users)) # 34k in gender and discovery_channel_category
+
+# convert column data types
+# dates
+orders$completed_at <- as.POSIXct(orders$completed_at, format="%Y-%m-%d %H:%M:%S", tz = "UTC")
+users$discovery_time <- as.POSIXct(users$discovery_time, format="%Y-%m-%d %H:%M:%S", tz = "UTC")
+products$launch_date <- as.POSIXct(products$launch_date, format="%Y-%m-%d %H:%M:%S", tz = "UTC")
+# double
+orders$price <- as.numeric(orders$price)
+# factors
+orders$order_channel <- as.factor(orders$order_channel)
+orders$order_channel_category <- as.factor(orders$order_channel_category)
+products$category <- as.factor(products$category)
+users$discovery_channel <- as.factor(users$discovery_channel)
+users$discovery_channel_category <- as.factor(users$discovery_channel_category)
+users$discovery_platform <- as.factor(users$discovery_platform)
+users$location <- as.factor(users$location)
+users$gender <- as.factor(users$gender)
+```
+
+Data consistencies are validated and assumptions made on how to deal with missing values.
+
+```{r, results='hide', warning=FALSE, message=FALSE}
+# check for data inconsistencies
+# per project instructions a channel category of 'paid' should result in one of the following channel designations, 'social', 'display', 'search', 'affiliate' and 'other'
+
+# check in users - 35 rows of insconsistent data (see list of assumptions)
+users %>% filter(
+  discovery_channel_category == "paid" &
+  is.na(discovery_channel)
+)
+
+# fix inconsistency by converting 'NA's to 'other'
+users$discovery_channel[
+  users$discovery_channel_category == "paid" &
+  is.na(users$discovery_channel)] <- "other"
+
+# check in orders - no such issue
+orders %>% filter(
+  order_channel_category == "paid" &
+  is.na(order_channel)
+)
+
+# check gender in users - see list of assumptions
+users %>% filter(is.na(gender))
+```
+
+Let's check out the final datasets.
+
+```{r, results='hide', warning=FALSE, message=FALSE}
+# sanity check
+str(orders)
+summary(orders)
+str(products)
+summary(products)
+str(users)
+summary(users)
+```
+
+
+
+## Exploring
+
+Now that the datasets are consistent (column names acceptable, missing data fixed/accounted for, data types fixed, factors assigned etc.) we can slice a few plots to understand the relationships captured within each dataset. Let's start by taking a look at **products**:
+
+```{r warning=FALSE, message=FALSE}
+# products
+# plot product launches for each year
+products$year <- years(products$launch_date)
+products$month <- months(products$launch_date, abbreviate = TRUE)
+products$month <- factor(products$month, levels = month.abb)
+ggplot(products, aes(x = month, category)) +
+  geom_count(aes(color = ..n.., size = ..n..)) + 
+  guides(color = 'legend') +
+  scale_size_area() + 
+  #scale_x_date(date_minor_breaks = "1 month", date_labels = "%b") + 
+  theme_minimal(base_size = 12, base_family = "serif") + 
+  labs(title = "Product launches by year", x="month", y="category") + 
+  facet_wrap( ~ year, nrow = 2)
+```
+
+Based on the graphs above we see that seasonal product categories such as *sweaters*, *outerwear*, *seasonal accessories* are launched in Oct-Nov and that *knit tops / dresses*, *woven tops / dresses* and *bottoms* are continously launched with pre-summer peaks - as expected. These patterns are fairly consistent over the past two years despite more products being launched in 2017. We see that *SLGs* were discontinued in 2017 and replaced with *denims*, that *bags* had a sizeable launch in August of 2017 and finally that *sweaters* has a significant yearly event every October. Let's move on to **users**:
+
+```{r, warning=FALSE, message=FALSE}
+# users
+
+# plot users by platform and location
+# slice users by week / month
+slice <- users
+slice$count <- 1
+slice$discovery_time <- as.Date(slice$discovery_time, tz = "UTC")
+#slice$week <- as.Date(cut(slice$discovery_time, breaks = "week", start.on.monday = TRUE))
+slice$month <- as.Date(cut(slice$discovery_time, breaks = "month"))
+
+# create aggregration table
+data_cut <- aggregate(slice$count, 
+                  list(time = slice$month,
+                       platform = slice$discovery_platform, 
+                       location = slice$location), sum)
+# create separate column for combined user profile
+data_cut$profile = paste(data_cut$platform, " in ", data_cut$location)
+data_cut <- subset(data_cut, select = c(time, profile, x))
+
+# plot monthly user growth
+ggplot(data_cut, aes(x = time, x, color = profile)) +
+  geom_line(size = 2, linetype = 'solid') + 
+  guides(color = 'legend') +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%b/%y") +
+  scale_colour_brewer(palette = "RdBu") + 
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Monthly user growth by location and platform", x="month", y="new users")
+
+
+# plot users by platform and gender
+
+# slice users by week / month
+slice <- users[complete.cases(users[ ,7]),] # remove gender 'NA' values
+slice$count <- 1
+slice$discovery_time <- as.Date(slice$discovery_time, tz = "UTC")
+#slice$week <- as.Date(cut(slice$discovery_time, breaks = "week", start.on.monday = TRUE))
+slice$month <- as.Date(cut(slice$discovery_time, breaks = "month"))
+# remove other gender types for this graph for readability
+slice <- slice %>% filter(gender %in% c("male", "female")) 
+
+# create aggregration table
+data_cut <- aggregate(slice$count, 
+                  list(time = slice$month,
+                       platform = slice$discovery_platform, 
+                       gender = slice$gender), 
+                  sum)
+# create separate column for combined user profile
+data_cut$profile = paste(data_cut$platform, " by ", data_cut$gender)
+data_cut <- subset(data_cut, select = c(time, profile, x))
+
+# plot monthly user growth
+ggplot(data_cut, aes(x = time, x, color = profile)) +
+  geom_line(size = 2, linetype = 'solid') + 
+  guides(color = 'legend') +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%b/%y") +
+  scale_colour_brewer(palette = "RdBu") + 
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Monthly user growth by gender and platform", x="month", y="new users")
+  
+```
+
+Based on the graphs above we see that the monthly user growth is strongest in the US and among female users, although the number of new male uses has doubled in the last year. Mobile is the fastest growing platform and has overtaken desktop as the platform of choice for new users.
+
+
+
+## 1 - New product launch
+
+### a. Measuring launch success
+
+We can views the business through two lenses;, the weekly new product launches that drive a big part of its revenue and the number of new customers making their first purchase. To measure the strength of a product launch we can split our customers into cohorts by week of first purchase and consider a metric / set of metrics, categorized by goals, to compare over time. Here are a few metrics to consider:
+
+* Growth:
+    1. revenue / customer - how much revenue and how quickly is it growing
+    2. total activations, orders - is it attracting more attention across the conversion funnel
+    3. average order size - are customers buying more products per checkout
+* Retention:
+    4. number of repeat orders - has it led to any consumer evangelists (for our marketing team to influence)
+    5. impact on existing product mix - is it complementing or substituting existing revenue
+    6. impact on existing user base - is it appealing/repelling our existing users
+* Risk:
+    7. prediction performance - an internal measure based on ML models of our prediction of launch strength. Successes that are not predicted (false negatives) should be analyzed further (same with false positives)
+
+For the purposes of this analysis, we'll consider the impact of product launch on revenue (1) and repeat purchases (4) across customer cohorts.
+
+
+### b. Trends in recent launches
+
+To understand the strength of a product launch let us observe the behaviour of our customers.
+
+```{r, warning=FALSE, message=FALSE}
+# create customer cohorts by first purchase date
+
+# update orders, products with month and line item revenue columns
+orders$cost <- orders$price * orders$quantity
+#orders$week <- as.Date(cut(orders$completed_at, breaks = "week", start.on.monday = TRUE))
+orders$month <- as.Date(cut(orders$completed_at, breaks = "month"))
+products$month <- as.Date(cut(products$launch_date, breaks = "month"))
+
+# group orders by customers 
+slice <- orders %>% group_by(user_id) %>%
+                  arrange(completed_at, .by_group = TRUE)
+
+# window function partitioned by user_id, ordered by completed_at to find dense rank
+slice <- mutate(slice, rank = dense_rank(completed_at))
+
+# create customer cohort dataframe
+slice <- slice %>% filter (rank == 1) # filter for the first purchase
+slice <- slice[!duplicated(slice$user_id), ] # remove dupicates
+slice$completed_at <- as.Date(slice$completed_at, tz = "UTC")
+slice <- subset(slice, select = c(user_id, line_item_id, order_id, completed_at, style_id, price, quantity, order_channel_category, month))
+customers_first_order <- slice %>% 
+                        group_by(month) %>% 
+                        arrange(month, .by_group = TRUE)
+  
+# plot to see cohort trend
+data_cut <- summarise(customers_first_order, 
+                      customers = n())
+ggplot(data_cut, aes(x = month, customers)) +
+  geom_line(size = 2, linetype = 'solid') + 
+  guides(color = 'legend') +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  labs(title = "Monthly new customer growth", x="month", y="new customer")
+
+
+# calculate cohort revenue per product launch
+cohort_revenue <- subset(slice, select = c(user_id, month, order_channel_category))
+names(cohort_revenue) <- c("user_id", "cohort", "channel")
+slice2 <- orders %>% group_by(user_id, style_id, month)
+slice2 <- summarise(slice2, revenue = sum(cost))
+
+# join additional data to make exploratory cuts
+cohort_revenue <- full_join(cohort_revenue, slice2, by = "user_id")
+cohort_revenue$days_since <- cohort_revenue$month - cohort_revenue$cohort
+cohort_revenue <- left_join(cohort_revenue, select(products, c(style_id, month, category)), by = "style_id")
+cohort_revenue$cohort <- as.factor(cohort_revenue$cohort)
+#cohort_revenue$launch_cat <- years(cohort_revenue$month.y)
+
+# create summary table of cohort by month
+by_cohort <- cohort_revenue %>% 
+                        group_by(cohort, month.x) %>% 
+                        arrange(month.x, .by_group = TRUE)
+  
+# plot to see cohort impact on revenue per user over time
+data_cut <- summarise(by_cohort, avg = sum(revenue)/n())
+#n <- length(unique(data_cut$cohort))
+ggplot(data_cut, aes(x = month.x, y = avg)) +
+  geom_area(aes(fill = cohort)) +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Revenue per customer by cohort", x="month", y="revenue / customer")
+
+# export cohort table to excel
+# temp <- spread(data_cut, month.x, avg)
+# temp[is.na(temp)] <- 0
+# write.csv(temp, file = "cohort_revenue_by_customer.csv")
+# rm(temp)
+
+# create summary table of cohort by month and category
+by_cohort <- cohort_revenue %>% 
+                        group_by(cohort, month.x, category) %>% 
+                        arrange(month.x, .by_group = TRUE)
+  
+# plot to see cohort impact on revenue per user over time by category
+data_cut <- summarise(by_cohort, avg = sum(revenue)/n())
+#n <- length(unique(data_cut$cohort))
+ggplot(data_cut, aes(x = month.x, y = avg)) +
+  geom_area(aes(fill = cohort)) +
+  facet_wrap( ~ category) +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Revenue per customer by cohort - all categories", x="month", y="revenue / customer")
+
+# plot to see cohort impact on revenue per user over time by filtered categories
+data_cut <- data_cut %>% filter (category %in% c("Knit Tops", "Footwear", "Outerwear", "Sweaters"))
+ggplot(data_cut, aes(x = month.x, y = avg)) +
+  geom_area(aes(fill = cohort)) +
+  facet_wrap( ~ category, ncol = 2, nrow = 2) +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="none") +
+  labs(title = "Revenue per customer by cohort - key categories", x="month", y="revenue / customer")
+
+# create summary table of cohort by month
+by_cohort <- cohort_revenue %>% 
+                        group_by(cohort, month.x, category) %>% 
+                        arrange(month.x, .by_group = TRUE)
+
+# plot to see cohort interest by category product launch
+data_cut <- summarise(by_cohort, n = n())
+ggplot(data_cut, aes(x = month.x, y = n)) +
+  geom_area(aes(fill = cohort)) + 
+  facet_wrap( ~ category) +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Number of customers by cohort - all categories", x="month", y="customers")
+
+# make space
+# rm(slice2)
+
+# plot to see cohort interest by category product launch - filtered
+data_cut <- data_cut %>% filter (category %in% c("Knit Tops", "Footwear", "Outerwear", "Sweaters"))
+ggplot(data_cut, aes(x = month.x, y = n)) +
+  geom_area(aes(fill = cohort)) + 
+  facet_wrap( ~ category, ncol = 2, nrow = 2) +
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="none") +
+  labs(title = "Number of customers by cohort - key categories", x="month", y="customers")
+
+```
+
+Based on the above, we can draw a few insights into recent product launches:
+
+* we see that since mid 2017 the number of new customers has climbed significantly. Peaks are observed in winter of 2016 (likely because of the large *sweaters* launch), in spring of 2017 (thanks to *knit tops* and *bottoms*) and finally once again in winter of 2017
+
+* the revenue per customer had been increasing, even for older cohorts, up until the *sweater* launch in winter of 2017 - for further details check out the cohort analysis table [extract](../020-notes/cohort_revenue_by_customer.csv)
+
+* *sweaters*, *outwear* display season effects, which works well for their October product launches - the annual *sweaters* launch in particular has been quite successful 
+
+* *footwear* is a steady product line with a loyal cohort of repeat customers, possibly due to  frequent monthly product launches 
+
+* *knit tops* have a large growing customer base that show sensitivity to product launches with new customer spikes following summer and winter launches
+
+* *denim* and *bags* product launches in 2017 were quite useful in bringing a lot of new customers
+
+* older customers keep returning for *sweaters*, *bottoms*, *knits* and *footwear* launches
+
+* overall, recent product launches have been quite good in that they been consistently attracting new customers while popular annual launches engage older customers
+
+
+### c. Future opportunities
+
+Possible areas of opportunities for new launches include:
+
+* *denim* - revenue for denim picked up almost immediately and attracted many new customers, signifying a potential annual event
+
+* *bags*, *bottoms* - have both acquired many new customers and have a high revenue / user
+
+* *knit tops* - has acquired many new customers in 2017 and is primed for a large launch event in spring of 2018
+
+* *footwear* - the large band of returning customers in this category make a good target for promotional events / loyalty programs
+
+* *woven dresses / tops* - appears to have potential, as revenue per user is quite high with a relatively steady growth of new customers
+
+* future product lines such as *swim wear*, *jackets* may also benefit from seasonal trends
+
+
+Lastly, we may want to track a few other metrics for the first 10, 20 and 30 days after product launch such as:
+
+* avg. order size
+* frequency of orders
+* number of repeat customers
+* number of new customers
+* days it takes to hit $5000 in total revenue
+* channel composition
+
+We can use these metrics to gauge the success of product launches at the style_id level. In addition we can perform a cluster analysis to observe groupings and tease other possible metrics / hidden features. Furthermore, if we identify known successes we can train a classification model to build an internal predictor of product launch success so that we may react proactively, in real time, to issues and opportunities.
+
+
+
+## 2 - New customer acquisition
+
+### a. Measuring customer acquisition success
+
+We can measure the strength of customer acquisition with the following metrics:
+
+1. Conversion ratio - to see how many user activations are converted to paying customers
+2. Repeat rate by channel - to see after how long cohorts, segmented by channel, come back as customers
+3. Life time value by channel - to see how much cohorts, segmented by channel, are spending
+
+
+### b. Channel value comparison
+
+To compare channel value let us observe how customers are acquired.
+
+```{r, warning=FALSE, message=FALSE, results = "asis"}
+# create customer cohorts by discovery date
+
+# plot repeat rate across channels
+# clean up column name
+colnames(customers_first_order)[colnames(customers_first_order) == "month"] <- "cohort"
+
+# get list of users and first order
+customers_first_order <- subset(customers_first_order, select = c(user_id, cohort, completed_at))
+customers_first_order <- left_join(customers_first_order,subset(users, select = c("user_id", "discovery_channel_category")))
+colnames(customers_first_order)<- c("user_id", "cohort", "first_order", "channel")
+
+# count cohort numbers in the first month by channel
+by_channel <- customers_first_order %>% 
+                        group_by(cohort, channel) %>% 
+                        arrange(cohort, .by_group = TRUE)
+cohort_first_month <- summarise(by_channel, n = n())
+
+# create summary table for LTV and repeat customer plots
+slice <- orders %>% group_by(user_id, month)
+customers_acq <- summarise(slice, 
+                   revenue = sum(cost), 
+                   items = n(), 
+                   orders = n_distinct(order_id),
+                   rep = n_distinct(user_id))
+customers_acq <- left_join(customers_acq, customers_first_order, by = "user_id")
+
+# create summary table of cohort by month
+by_cohort <- customers_acq %>% 
+                        group_by(cohort, month, channel) %>% 
+                        arrange(month, .by_group = TRUE)
+data_cut <- summarise(by_cohort, repeat_cust = sum(rep))
+data_cut <- left_join(data_cut, cohort_first_month, by = c("cohort", "channel"))
+
+# create summary table of repeat customers by channel and days since first purchase
+data_cut$days_since <- data_cut$month - data_cut$cohort
+by_days_since <- data_cut %>% 
+                        group_by(days_since, channel) %>% 
+                        arrange(days_since, .by_group = TRUE)
+data_cut <- summarise(by_days_since, 
+                      tot_rep = sum(repeat_cust),
+                      total = sum(n))
+data_cut$repeats <- round((100 * data_cut$tot_rep/ data_cut$total), 2)
+
+# another method
+# data_cut <- subset(orders, select = c(line_item_id, user_id, completed_at))
+# data_cut$completed_at <- as.Date(data_cut$completed_at, tz = 'UTC')
+# data_cut <- left_join(data_cut, customers_first_order, by = "user_id")
+
+data_cut <- data_cut %>% filter(days_since > 0)
+# plot of repeat customers by cohort and channel
+ggplot(data_cut, aes(x = days_since, y = repeats)) +
+  geom_jitter() +
+  geom_smooth() + 
+  facet_wrap( ~ channel, ncol = 2, nrow = 3) +
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Repeat customers channel", x="days since first purchase", y="pct. of repeat customers")
+
+
+# calculate life time value across channels
+by_channel <- customers_acq %>% 
+                        group_by(channel) %>% 
+                        arrange(channel, .by_group = TRUE)
+data_cut <- summarise(by_channel, 
+                   revenue = sum(revenue), 
+                   items = sum(items), 
+                   orders = sum(orders), 
+                   customers = n_distinct(user_id))
+
+# calculate LTV and other revenue metrics by channel
+data_cut$LTV = round(data_cut$revenue / data_cut$customers, 2)
+data_cut$avg_order = round(data_cut$revenue / data_cut$orders, 2)
+data_cut$items_per_order = round(data_cut$items / data_cut$orders, 1)
+data_cut$orders_per_customer = round(data_cut$orders / data_cut$customers, 1)
+ltv_table <- subset(data_cut, select = -c(2:5)) %>% arrange(desc(LTV))
+
+# display table
+kable(ltv_table, caption = "Value across channels")
+
+
+# calculate conversion ratio across channels
+# find users acquired for the month
+data_cut <- subset(users, select = c(user_id, discovery_channel_category, discovery_time))
+names(data_cut) <- c("user_id", "channel", "month")
+data_cut$month <- as.Date(cut(data_cut$month, breaks = "month"))
+by_channel <- data_cut %>% 
+                      group_by(month, channel) %>% 
+                      arrange(channel, .by_group = TRUE)
+funnel <- summarise(by_channel, 
+                   acquisition = n_distinct(user_id))
+
+# find users making first purchase by month
+by_channel <- customers_first_order %>% 
+                      group_by(cohort, channel) %>% 
+                      arrange(channel, .by_group = TRUE)
+data_cut <- summarise(by_channel, 
+                      activation = n_distinct(user_id))
+colnames(data_cut)[1] <- "month"
+funnel <- left_join(funnel, data_cut, by = c("month", "channel"))
+
+# find users who repeat after one month
+customers_acq$rep_after_month <- 0
+customers_acq$rep_after_month[customers_acq$cohort != customers_acq$month] <- 1 # customer returns after first purchase a month or more later
+by_channel <- customers_acq %>% 
+                      group_by(month, channel) %>% 
+                      arrange(channel, .by_group = TRUE)
+data_cut <- summarise(by_channel, 
+                      retention = sum(rep_after_month))
+funnel <- left_join(funnel, data_cut, by = c("month", "channel"))
+
+# find users who have spent at least $300 (more than highest LTV)
+
+# find conversion ratios
+funnel$conversion_ratio <- round(100 * funnel$activation / funnel$acquisition, 0)
+
+# plot conversion ratios by channel over time
+ggplot(funnel, aes(x = month, y = conversion_ratio, color = channel)) +
+  geom_jitter() + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  scale_x_date(date_minor_breaks = "1 month", date_labels = "%m/%y") +
+  scale_colour_brewer(palette = "Set1") + 
+  theme_minimal(base_size = 12, base_family = "serif") +
+  theme(legend.position="bottom") +
+  labs(title = "Conversion ratio across channels", x="month", y="conversion ratio (%)")
+
+```
+
+Based on the analysis above we can make the following observations:
+
+* *email* is the most valuable channel - it has the best life time value per customer, highest average order size, best conversion ratio and has led to the most repeat buyers (presumably influenced by email campaigns)
+
+* *paid* has a sizeable revenue impact, although its conversion rate is poor
+
+* *direct* and *organic search* are both middle of the road options with decent conversion rates and average order size - although as the company builds its brand we should expect *direct* to have a greater impact
+
+* *other* is the least effective channel, as well as the least profitable
+
+
+### c. Additional data requirements
+
+To measure acquisition performance using the metrics above, we would want to have access to the following additional data:
+
+* metrics across the entire conversion funnel including referrals, activation, along with other info such as session length
+
+* marketing spend across channels, so that we may calculate the customer acquisition cost and compare it our LTV per customer. This would tell us if the *paid* channel option is worth its price tag (ideally we'd want our LTV : CAC > 3)
+
+
+
+## 3 - Customer segments
+
+### a. Identifying shoe lovers
+
+In order to identify our customer marketing lists let us first begin by identifying possible features that we can use to segment our customers:
+
+* gender
+* location
+* platform
+* discovery channel
+* cohort age
+* category of first purchase
+* category of last purchase
+* days since last purchase
+* number of purchases by category
+* average order size by category
+* life time customer value by category
+* category purchases as a percentage of total spend
+* orders as a percentage of total orders
+
+Let us build this dataset for analysis.
+
+```{r, warning=FALSE, message=FALSE, results = "asis"}
+
+# add / explore features
+# extract customers that have placed orders
+segments <- as.data.frame(unique(orders$user_id))
+names(segments) <- "user_id"
+
+# add user data (gender, platform, location, channel)
+segments <- left_join(segments, users, by = "user_id")
+segments <- segments[, c(1, 2, 5:7)]
+names(segments)[2] <- "channel"
+names(segments)[3] <- "platform"
+
+# add cohort date
+segments <-left_join(segments, subset(customers_first_order, select = c(user_id, cohort)), by = "user_id")
+
+# add days since last purchase and category of last purchase
+slice <- orders
+slice$since_last <- as.Date("2018-01-01") - as.Date(slice$completed_at)
+slice <- slice %>% group_by(user_id) %>%
+                  arrange(since_last, .by_group = TRUE)
+# find top rank to determine last purchase
+slice <- mutate(slice, rank = dense_rank(since_last))
+slice <- slice %>% filter (rank == 1) # filter for the first purchase
+slice <- slice[!duplicated(slice$user_id), ] # remove dupicates
+segments <- left_join(segments, subset(slice, select = c(user_id, since_last, style_id)), by = "user_id")
+segments <- left_join(segments, subset(products, select = c(style_id, category), by = "style_id"))
+segments <- segments[, -c(8)]
+names(segments)[8] <- "last_category"
+
+# add category of first purchase
+slice <- orders
+slice <- slice %>% group_by(user_id) %>%
+                  arrange(completed_at, .by_group = TRUE)
+# find top rank to determine first purchase
+slice <- mutate(slice, rank = dense_rank(completed_at))
+slice <- slice %>% filter (rank == 1) # filter for the first purchase
+slice <- slice[!duplicated(slice$user_id), ] # remove dupicates
+segments <- left_join(segments, subset(slice, select = c(user_id, style_id)), by = "user_id")
+segments <- left_join(segments, subset(products, select = c(style_id, category), by = "style_id"))
+segments <- segments[, -c(9)]
+names(segments)[9] <- "first_category"
+
+# add features by purchase history for each category
+slice <- left_join(orders, subset(products, select = c(style_id, category)), by = "style_id")
+slice <- slice %>% 
+                group_by(user_id, category) %>% 
+                arrange(category, .by_group = TRUE)
+# create summary tables for features
+data_cut <- summarise(slice, 
+                      revenue = sum(cost),
+                      items = sum(quantity),
+                      orders = n_distinct(order_id)
+                      )
+# find total spend by user to find percentages for each category
+data_cut <- data_cut %>% group_by(user_id)
+data_cut2 <- summarise(data_cut,
+                       total_revenue = sum(revenue),
+                       total_items = sum(items),
+                       total_orders = sum(orders))
+data_cut <- left_join(data_cut, data_cut2, by = "user_id")
+# add average order size by category
+data_cut$avg_order <- round(data_cut$revenue / data_cut$orders,2)
+# add percentage of purchases category
+data_cut$pct_revenue <- round(data_cut$revenue / data_cut$total_revenue, 2)
+# add percentage of orders in category
+data_cut$pct_order <- round(data_cut$orders / data_cut$total_orders,2)
+
+# subset features to use
+customers_by_category <- data_cut[, c(1:5, 9:11)]
+
+
+# create user_id lists
+
+# unique(products$category)
+# create datasets for all product categories
+# TODO: look up how to create arrays of dfs tomorrow - OOP in R
+lovers_footwear <- getUserList(customers_by_category, segments, "Footwear")
+lovers_sweaters <- getUserList(customers_by_category, segments, "Sweaters")
+lovers_woven_tops <- getUserList(customers_by_category, segments, "Woven Tops")
+lovers_woven_dress <- getUserList(customers_by_category, segments, "Woven Dresses")
+lovers_knit_tops <- getUserList(customers_by_category, segments, "Knit Tops")
+lovers_knit_dress <- getUserList(customers_by_category, segments, "Knit Dresses")
+lovers_bags <- getUserList(customers_by_category, segments, "Bags")
+lovers_bottoms <- getUserList(customers_by_category, segments, "Bottoms")
+lovers_seasonal <- getUserList(customers_by_category, segments, "Seasonal Accessories")
+lovers_shirting <- getUserList(customers_by_category, segments, "Shirting")
+lovers_slg <- getUserList(customers_by_category, segments, "SLGs")
+lovers_outerwear <- getUserList(customers_by_category, segments, "Outerwear")
+lovers_denim <- getUserList(customers_by_category, segments, "Denim")
+lovers_other <- getUserList(customers_by_category, segments, "Other")
+
+# display table for footwear
+product_lover <- printSummary(lovers_footwear)
+kable(product_lover, caption = "Shoe lovers overview")
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# save files
+write.csv(lovers_footwear[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_footwear.csv", row.names = FALSE)
+write.csv(lovers_sweaters[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_sweaters.csv", row.names = FALSE)
+write.csv(lovers_woven_tops[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_woven_tops.csv", row.names = FALSE)
+write.csv(lovers_woven_dress[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_woven_dress.csv", row.names = FALSE)
+write.csv(lovers_knit_tops[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_knit_tops.csv", row.names = FALSE)
+write.csv(lovers_knit_dress[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_knit_dress.csv", row.names = FALSE)
+write.csv(lovers_bags[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_bags.csv", row.names = FALSE)
+write.csv(lovers_bottoms[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_bottoms.csv", row.names = FALSE)
+write.csv(lovers_seasonal[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_seasonal.csv", row.names = FALSE)
+write.csv(lovers_shirting[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_shirting.csv", row.names = FALSE)
+write.csv(lovers_slg[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_slg.csv", row.names = FALSE)
+write.csv(lovers_outerwear[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_outerwear.csv", row.names = FALSE)
+write.csv(lovers_denim[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_denim.csv", row.names = FALSE)
+write.csv(lovers_other[,c(1,2,10:13,15,4:7)], file = "../020-notes/lovers_other.csv", row.names = FALSE)
+
+```
+
+It is naturally assumed that Shoe Lovers are customers that have previously bought shoes on the site. That is to say that the new email campaign targets loyalists with a demonstrated affinity for shoes. This is relevant as we are not looking for *similar customers*, which would require a recommendation / similarity matrix approach based on product purchase history. Nor is the marketing team interested in identifying *likely customers*, existing customers that have not already bought shoes that are most likely to purchase, which would requrie a classification / random forest model approach based on bio/demo data and purchase characteristics. The Shoe Lovers list is instead a list of customer loyalists (so assumed) that the marketing team can incentivize and build campaigns around. Hence we can filter our footwear customers with the following associative rules:
+
+1. *Stars* - are customers that are both *high enders* and *cash cows*
+
+2. *High enders* - high end customers that are driving the bottom line i.e. the top 10 customers that have spent the most on the product
+  
+3. *Cash cows* - customers that are in the top 25% in revenue for the product category, and purchase more than median number of items, and spend more than 30% of their total spending in this category
+
+4. *New lovers* - new customers (last 6 months) that have spent 50% of their total spending in the product category
+
+5. *Recent lovers* - recent customers that bought a product from the category in the last 30 days
+
+
+### b. User lists by category
+
+Check out all *product category user_id lists* here:
+
+* [Bags](../020-notes/lovers_bags.csv)
+* [Bottoms](../020-notes/lovers_bottoms.csv)
+* [Denim](../020-notes/lovers_denim.csv)
+* [Footwear](../020-notes/lovers_footwear.csv)
+* [Knit Dresses](../020-notes/lovers_knit_dress.csv)
+* [Knit Tops](../020-notes/lovers_knit_tops.csv)
+* [Other](../020-notes/lovers_other.csv)
+* [Outerwear](../020-notes/lovers_outerwear.csv)
+* [Seasonal](../020-notes/lovers_seasonal.csv)
+* [Shirting](../020-notes/lovers_shirting.csv)
+* [SLGs](../020-notes/lovers_slg.csv)
+* [Sweaters](../020-notes/lovers_sweaters.csv)
+* [Woven Dresses](../020-notes/lovers_woven_dress.csv)
+* [Woven Tops](../020-notes/lovers_woven_tops.csv)
+
+
+```{r, warning=FALSE, message=FALSE, results = "asis"}
+
+# display table for sweater lovers
+product_lover <- printSummary(lovers_sweaters)
+kable(product_lover, caption = "Sweater lovers overview")
+
+# display table for knit top lovers
+product_lover <- printSummary(lovers_knit_tops)
+kable(product_lover, caption = "Knit top lovers overview")
+
+```
+
+
+
+## 4 - Experimentation
+
+### a. A/B test design and execution
+
+In order the measure the success of the new Shoe Lovers email campaign we may design and execute an A/B test in the following manner:
+
+0. **Hypothesis**: shoe lovers are more likely to click / open shoe-related campaign email
+
+1. **Pick test parameters**: these are the features of the campaign that we can manipulate that would have the largest effect on the conversion process. We can create tests to check the impact of each parameter at a time. A few possible test parameters include:
+    * email subject line (Book Sale vs Discounts on Books)
+    * personalization (Mrs Smith vs Jane)
+    * call to action (buy now vs see more)
+    * special offer (75% off on all books vs $10 off)
+    * time of day (early morning vs late night)
+    * template (general formatting, images used etc.)
+
+2. **Pick test metric**: typical metrics are click-through rate, email open rate, website conversions, unsuscribe rate
+
+3. **Determine test goal**: the conversion rate is the metric of choice, we may want to detect a conversion rate of at least 10% - this will determine our null hypothesis
+
+4. **Select control vs test groups**: pick customers from the list randomly for each split. Sample size can be calculated based on anticipated conversion rate goal and confidence level (typically 95% with 0.8 power on a t-test) - larger the sample size the better the accuracy
+
+6. **Set up experiment**: if not using an A/B testing tool (mailchimp, optimizely, google analytics) we can manually email our separate test groups and place javacsript on our paged links to manipulate appearance and track attribution. We can then analyze across segments by platform, cohort, gender, model features etc
+
+7. **Collect data**: collect data based on the metrics above. Typical data fields would include: user_id, channel, platform, test_id, test_group, user_event (made on metrics above such as email click, website visit, product order etc)
+
+8. **Analyze results**: finally pick the winner based on improvements in conversion metrics over the run time of the experiment. Interleaving A/B tests may hasten results, along with running multi-variate tests that are run continously / over a longer span of time
+
+

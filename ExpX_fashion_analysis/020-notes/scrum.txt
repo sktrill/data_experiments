@@ -1,0 +1,49 @@
+SCRUM PLAN
+----------------------------------------
+(plan : actual)
+
+iteration #1 (day 1 : day 1) - Tuesday
+- answers mind map
+- play with data
+
+iteration #2 (day 2,3 : day 2,3,4)
+- all answers
+
+iteration #3 (day 4 : day 4)
+- weak answers
+
+iteration #4 (day 4 : day 5)
+- answer 1 advanced (if time)
+- review
+
+iteration #5 (day 5 : day 5) 
+- presentation
+- packaging
+- review
+- sleep on final package
+
+deliver (day 6) - Sunday morning
+- review
+
+
+
+- final package:
+	- final graphs (png)
+	- final R files (R)
+	- final SQL scripts (txt / in mode)
+	- answers + analysis workflow (Rmd) - keep running doc
+	- start instructions (doc) - keep running doc, include:
+		- directory structure
+		- assumptions / stakeholder questions
+	- exec summary (ppt), include:
+		- include key insights only
+		- workflow comparison for answers
+
+
+
+ITERATION x.0 STATUS (remaining to dos)
+----------------------------------------
+- 
+- 
+- 
+

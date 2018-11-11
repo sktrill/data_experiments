@@ -1,0 +1,729 @@
+"id","user_id","channel","platform","location","gender","since_last","revenue","items","orders","avg_order"
+"2 - High enders",1576624,"paid","desktop","US","female",74,1052,14,9,116.89
+"2 - High enders",1570247,"email","mobile","US","female",96,749,9,6,124.83
+"1 - Stars",2020820,"direct","desktop","US","female",174,560,14,4,140
+"2 - High enders",1462133,"direct","desktop","US","female",6,471,4,3,157
+"1 - Stars",1728142,"direct","desktop","US","female",77,465,3,3,155
+"2 - High enders",1355673,"paid","mobile","US","female",24,430,4,3,143.33
+"2 - High enders",1502394,"paid","desktop","US","female",370,355,1,1,355
+"1 - Stars",2298674,"paid","desktop","international","female",31,330,2,1,330
+"1 - Stars",1333134,"paid","desktop","US","female",48,330,2,2,165
+"1 - Stars",2298349,"paid","mobile","US","female",77,330,2,2,165
+"1 - Stars",2340966,"paid","mobile","US","male",81,330,2,2,165
+"1 - Stars",2531344,"paid","mobile","US","female",31,330,2,2,165
+"1 - Stars",2293837,"organic search","mobile","international","female",70,315,2,1,315
+"1 - Stars",1870133,"paid","desktop","US","female",13,315,2,2,157.5
+"1 - Stars",2367329,"direct","desktop","US","female",6,315,2,2,157.5
+"1 - Stars",1329811,"other","desktop","international","female",196,309,2,1,309
+"3 - Cash cows",1740970,"paid","desktop","US","female",98,116,2,2,58
+"3 - Cash cows",1788330,"direct","desktop","US","female",129,116,2,2,58
+"3 - Cash cows",2186399,"organic search","mobile","US","female",15,116,2,2,58
+"3 - Cash cows",1375362,"organic search","mobile","US","female",593,120,2,1,120
+"3 - Cash cows",1465889,"email","mobile","international","female",87,120,2,2,60
+"3 - Cash cows",2200238,"other","desktop","US","female",102,123,2,2,61.5
+"3 - Cash cows",726073,"organic search","desktop","US","female",5,126,2,1,126
+"3 - Cash cows",1634816,"organic search","desktop","US","male",15,126,2,1,126
+"3 - Cash cows",1808908,"direct","desktop","US","male",18,126,2,1,126
+"3 - Cash cows",2313275,"organic search","desktop","US","female",91,126,2,1,126
+"3 - Cash cows",2570277,"organic search","desktop","US","female",24,128,2,1,128
+"3 - Cash cows",1164075,"email","desktop","international","male",66,128,2,2,64
+"3 - Cash cows",806809,"email","desktop","international","female",584,130,2,1,130
+"3 - Cash cows",2173545,"other","mobile","US","female",92,130,2,1,130
+"3 - Cash cows",1639902,"direct","desktop","US","female",149,134,3,3,44.67
+"3 - Cash cows",2214267,"paid","desktop","US","male",13,135,2,2,67.5
+"3 - Cash cows",2613536,"direct","desktop","US","male",15,136,2,1,136
+"3 - Cash cows",1032212,"organic search","mobile","US","female",515,136,2,2,68
+"3 - Cash cows",1034974,"email","mobile","US","female",493,136,2,2,68
+"3 - Cash cows",1576454,"organic search","desktop","international","male",254,136,2,2,68
+"3 - Cash cows",1633518,"organic search","mobile","US","male",280,136,2,2,68
+"3 - Cash cows",1884020,"other","desktop","international","male",115,136,2,2,68
+"3 - Cash cows",2138520,"other","desktop","US","female",128,136,2,2,68
+"3 - Cash cows",2524597,"paid","desktop","US","female",20,136,2,2,68
+"3 - Cash cows",2087382,"organic search","mobile","US","female",29,136,3,3,45.33
+"3 - Cash cows",1372785,"direct","desktop","US","female",372,138,2,1,138
+"3 - Cash cows",1572218,"organic search","desktop","international","male",385,138,2,2,69
+"3 - Cash cows",1645530,"other","desktop","US","female",363,138,2,2,69
+"3 - Cash cows",1393422,"organic search","desktop","international","female",587,140,2,1,140
+"3 - Cash cows",700212,"direct","desktop","US","female",377,140,2,2,70
+"3 - Cash cows",1398918,"other","desktop","US","male",569,140,2,2,70
+"3 - Cash cows",1457925,"organic search","desktop","international","female",498,140,2,2,70
+"3 - Cash cows",1524924,"paid","desktop","US","female",434,140,2,2,70
+"3 - Cash cows",677010,"organic search","desktop","US","female",23,143,2,2,71.5
+"3 - Cash cows",1462448,"paid","desktop","US","female",453,145,2,1,145
+"3 - Cash cows",1918721,"organic search","mobile","international","female",254,146,2,1,146
+"3 - Cash cows",2582904,"paid","desktop","international","female",17,146,2,2,73
+"3 - Cash cows",1467417,"paid","desktop","international","female",495,148,2,1,148
+"3 - Cash cows",831662,"paid","desktop","US","female",14,148,2,2,74
+"3 - Cash cows",1489593,"direct","desktop","US","female",265,148,2,2,74
+"3 - Cash cows",2003839,"paid","mobile","US","female",35,148,2,2,74
+"3 - Cash cows",2167486,"other","desktop","US","male",98,148,2,2,74
+"3 - Cash cows",1486437,"paid","desktop","US","female",478,150,2,1,150
+"3 - Cash cows",1524444,"direct","desktop","international","female",447,150,2,1,150
+"3 - Cash cows",1593564,"other","mobile","international","male",401,150,2,1,150
+"3 - Cash cows",1937605,"direct","mobile","US","female",143,150,2,1,150
+"3 - Cash cows",1024795,"direct","desktop","US","female",193,150,2,2,75
+"3 - Cash cows",2437608,"direct","mobile","international","female",19,150,2,2,75
+"3 - Cash cows",1698207,"direct","desktop","US","male",64,153,2,2,76.5
+"3 - Cash cows",1615930,"organic search","desktop","US","female",393,155,2,1,155
+"3 - Cash cows",2006073,"paid","mobile","international","male",211,156,2,1,156
+"3 - Cash cows",2212800,"paid","desktop","US","female",15,156,2,2,78
+"3 - Cash cows",1085560,"direct","desktop","US","male",13,160,2,2,80
+"3 - Cash cows",1504981,"other","desktop","US","male",166,160,2,2,80
+"3 - Cash cows",1575390,"other","desktop","international","male",355,160,2,2,80
+"3 - Cash cows",1620774,"direct","desktop","US","male",319,160,2,2,80
+"3 - Cash cows",1662410,"other","desktop","US","male",357,160,2,2,80
+"3 - Cash cows",1946243,"paid","desktop","US","female",229,160,2,2,80
+"3 - Cash cows",1501503,"organic search","mobile","US","female",34,175,2,1,175
+"3 - Cash cows",2295209,"organic search","desktop","US","female",97,175,2,1,175
+"3 - Cash cows",2138407,"other","desktop","international","female",149,176,3,1,176
+"3 - Cash cows",1478364,"direct","desktop","US","female",19,178,3,2,89
+"3 - Cash cows",1601665,"direct","desktop","US","male",78,180,3,1,180
+"3 - Cash cows",2402512,"paid","mobile","US","female",20,180,3,2,90
+"3 - Cash cows",1698126,"direct","desktop","US","female",351,183,2,1,183
+"3 - Cash cows",2580686,"direct","mobile","US","male",20,183,2,1,183
+"3 - Cash cows",1379360,"direct","desktop","US","female",601,185,2,1,185
+"3 - Cash cows",578849,"email","mobile","US","female",30,193,2,1,193
+"3 - Cash cows",2569025,"other","desktop","international","female",7,193,2,2,96.5
+"3 - Cash cows",1615466,"direct","mobile","US","female",27,194,4,3,64.67
+"3 - Cash cows",1426003,"direct","desktop","US","female",506,195,2,2,97.5
+"3 - Cash cows",1343973,"direct","desktop","international","male",263,196,3,1,196
+"3 - Cash cows",2304171,"organic search","desktop","US","female",96,200,2,1,200
+"3 - Cash cows",2661656,"paid","mobile","US","female",3,200,2,1,200
+"3 - Cash cows",2300217,"paid","mobile","US","female",31,203,2,2,101.5
+"3 - Cash cows",2302901,"paid","desktop","US","male",96,204,3,1,204
+"3 - Cash cows",1473855,"direct","desktop","US","female",489,206,3,1,206
+"3 - Cash cows",1429079,"paid","desktop","US","male",520,210,2,2,105
+"3 - Cash cows",1583022,"email","desktop","US","female",53,210,2,2,105
+"3 - Cash cows",1444293,"paid","desktop","US","male",377,210,3,3,70
+"3 - Cash cows",1654778,"direct","desktop","US","female",34,214,3,3,71.33
+"3 - Cash cows",1624967,"paid","desktop","US","female",388,216,3,1,216
+"3 - Cash cows",2262106,"direct","desktop","US","female",108,228,2,1,228
+"3 - Cash cows",1416003,"other","desktop","US","male",500,230,2,2,115
+"3 - Cash cows",1453934,"paid","desktop","US","female",74,230,2,2,115
+"3 - Cash cows",1563958,"organic search","desktop","international","male",411,230,2,2,115
+"3 - Cash cows",1608325,"organic search","desktop","US","female",354,230,2,2,115
+"3 - Cash cows",1659092,"direct","desktop","international","female",98,230,2,2,115
+"3 - Cash cows",1792623,"paid","mobile","US","female",44,230,2,2,115
+"3 - Cash cows",1814297,"email","desktop","US","female",274,230,2,2,115
+"3 - Cash cows",2516796,"other","mobile","international","female",30,233,2,1,233
+"3 - Cash cows",2066139,"other","desktop","US","female",178,234,3,2,117
+"3 - Cash cows",1613555,"organic search","desktop","international","female",394,240,3,1,240
+"3 - Cash cows",1378438,"direct","desktop","international","female",168,240,3,2,120
+"3 - Cash cows",1482698,"organic search","desktop","international","male",391,240,3,3,80
+"3 - Cash cows",2229190,"paid","desktop","US","female",70,240,3,3,80
+"3 - Cash cows",2480951,"paid","desktop","international","female",41,245,2,1,245
+"3 - Cash cows",1630454,"paid","desktop","US","male",310,245,2,2,122.5
+"3 - Cash cows",1363556,"direct","mobile","US","female",522,260,2,2,130
+"3 - Cash cows",2306233,"paid","desktop","US","female",25,261,3,2,130.5
+"3 - Cash cows",2475656,"direct","mobile","US","female",31,261,4,3,87
+"3 - Cash cows",1751512,"direct","desktop","US","female",21,266,3,2,133
+"3 - Cash cows",2102696,"organic search","desktop","US","male",121,278,4,4,69.5
+"3 - Cash cows",2137204,"direct","desktop","international","female",149,286,2,1,286
+"3 - Cash cows",2579608,"organic search","mobile","US","female",21,288,3,1,288
+"3 - Cash cows",1749356,"organic search","desktop","international","male",328,300,2,1,300
+"3 - Cash cows",2447273,"email","desktop","US","female",27,300,2,1,300
+"3 - Cash cows",1310149,"other","desktop","US","female",36,300,2,2,150
+"3 - Cash cows",1411385,"direct","desktop","US","female",20,300,3,2,150
+"3 - Cash cows",1612817,"direct","desktop","US","female",380,300,2,2,150
+"3 - Cash cows",1621933,"direct","desktop","US","female",383,300,2,2,150
+"3 - Cash cows",2451479,"paid","desktop","US","female",6,300,2,2,150
+"4 - New lovers",203806,"direct","mobile","US","male",12,165,1,1,165
+"4 - New lovers",380492,"direct","desktop","international","female",113,165,1,1,165
+"4 - New lovers",569069,"direct","mobile","international","female",113,165,1,1,165
+"4 - New lovers",1060672,"organic search","desktop","international","female",43,165,1,1,165
+"4 - New lovers",1118234,"paid","desktop","US","female",105,165,1,1,165
+"4 - New lovers",1464338,"paid","mobile","US","female",11,165,1,1,165
+"4 - New lovers",1468094,"email","mobile","US","female",103,165,1,1,165
+"4 - New lovers",1519676,"direct","desktop","US","female",92,165,1,1,165
+"4 - New lovers",1566456,"direct","desktop","US","female",66,165,1,1,165
+"4 - New lovers",1690602,"paid","mobile","US","female",131,165,1,1,165
+"4 - New lovers",1728603,"paid","desktop","US","female",88,165,1,1,165
+"4 - New lovers",1789960,"paid","desktop","US","female",96,165,1,1,165
+"4 - New lovers",1889092,"email","desktop","US","male",22,165,1,1,165
+"4 - New lovers",1896033,"organic search","desktop","international","female",114,165,1,1,165
+"4 - New lovers",1942424,"email","desktop","international","female",112,165,1,1,165
+"4 - New lovers",1978710,"direct","mobile","US","female",130,165,1,1,165
+"4 - New lovers",2148346,"paid","mobile","US","female",25,165,1,1,165
+"4 - New lovers",2162436,"paid","desktop","US","female",128,165,1,1,165
+"4 - New lovers",2190600,"paid","mobile","US","female",123,165,1,1,165
+"4 - New lovers",2192608,"direct","mobile","US","female",128,165,1,1,165
+"4 - New lovers",2196101,"paid","desktop","US","female",129,165,1,1,165
+"4 - New lovers",2200569,"paid","mobile","US","female",128,165,1,1,165
+"4 - New lovers",2201910,"direct","mobile","US","female",127,165,1,1,165
+"4 - New lovers",2204001,"direct","desktop","international","female",120,165,1,1,165
+"4 - New lovers",2210901,"paid","mobile","US","female",124,165,1,1,165
+"4 - New lovers",2222627,"direct","desktop","international","female",120,165,1,1,165
+"4 - New lovers",2229117,"organic search","desktop","US","female",89,165,1,1,165
+"4 - New lovers",2232605,"paid","desktop","US","female",116,165,1,1,165
+"4 - New lovers",2247556,"paid","mobile","US","female",106,165,1,1,165
+"4 - New lovers",2247625,"direct","mobile","international","female",112,165,1,1,165
+"4 - New lovers",2251765,"paid","mobile","international","female",111,165,1,1,165
+"4 - New lovers",2271725,"direct","desktop","US","female",97,165,1,1,165
+"4 - New lovers",2277608,"paid","desktop","US","female",25,165,1,1,165
+"4 - New lovers",2279863,"organic search","mobile","US","female",102,165,1,1,165
+"4 - New lovers",2283506,"paid","mobile","US","female",100,165,1,1,165
+"4 - New lovers",2291015,"organic search","mobile","US","female",70,165,1,1,165
+"4 - New lovers",2291525,"paid","mobile","US","female",98,165,1,1,165
+"4 - New lovers",2291975,"paid","desktop","US","female",98,165,1,1,165
+"4 - New lovers",2292633,"organic search","mobile","international","female",97,165,1,1,165
+"4 - New lovers",2294858,"organic search","mobile","international","female",95,165,1,1,165
+"4 - New lovers",2295530,"organic search","desktop","US","female",97,165,1,1,165
+"4 - New lovers",2296447,"other","mobile","US","female",12,165,1,1,165
+"4 - New lovers",2297352,"paid","desktop","US","female",11,165,1,1,165
+"4 - New lovers",2297518,"organic search","desktop","international","female",97,165,1,1,165
+"4 - New lovers",2298106,"paid","mobile","US","female",97,165,1,1,165
+"4 - New lovers",2298424,"direct","mobile","US","female",61,165,1,1,165
+"4 - New lovers",2298858,"organic search","mobile","US","male",5,165,1,1,165
+"4 - New lovers",2299775,"paid","desktop","US","female",97,165,1,1,165
+"4 - New lovers",2300409,"organic search","mobile","US","female",46,165,1,1,165
+"4 - New lovers",2302763,"paid","mobile","US","female",96,165,1,1,165
+"4 - New lovers",2303574,"paid","desktop","US","female",96,165,1,1,165
+"4 - New lovers",2305354,"paid","mobile","US","female",94,165,1,1,165
+"4 - New lovers",2305582,"paid","desktop","US","female",96,165,1,1,165
+"4 - New lovers",2305596,"paid","desktop","US","female",96,165,1,1,165
+"4 - New lovers",2306771,"direct","desktop","international","female",81,165,1,1,165
+"4 - New lovers",2309270,"paid","desktop","US","female",48,165,1,1,165
+"4 - New lovers",2310512,"paid","desktop","US","female",43,165,1,1,165
+"4 - New lovers",2311593,"paid","desktop","US","female",94,165,1,1,165
+"4 - New lovers",2312683,"paid","desktop","US","female",94,165,1,1,165
+"4 - New lovers",2313013,"paid","desktop","US","female",94,165,1,1,165
+"4 - New lovers",2313705,"direct","mobile","international","female",80,165,1,1,165
+"4 - New lovers",2316832,"paid","desktop","US","female",93,165,1,1,165
+"4 - New lovers",2319773,"paid","desktop","US","female",31,165,1,1,165
+"4 - New lovers",2320601,"paid","desktop","US","female",70,165,1,1,165
+"4 - New lovers",2324192,"organic search","desktop","US","male",45,165,1,1,165
+"4 - New lovers",2328516,"organic search","desktop","US","female",89,165,1,1,165
+"4 - New lovers",2331221,"paid","desktop","US","female",6,165,1,1,165
+"4 - New lovers",2335561,"paid","desktop","US","female",87,165,1,1,165
+"4 - New lovers",2357762,"direct","desktop","US","female",25,165,1,1,165
+"4 - New lovers",2362879,"paid","mobile","international","female",78,165,1,1,165
+"4 - New lovers",2366498,"paid","mobile","US","female",77,165,1,1,165
+"4 - New lovers",2372637,"paid","mobile","US","female",75,165,1,1,165
+"4 - New lovers",2375090,"organic search","mobile","US","female",25,165,1,1,165
+"4 - New lovers",2380201,"paid","desktop","US","female",47,165,1,1,165
+"4 - New lovers",2386833,"direct","mobile","US","female",70,165,1,1,165
+"4 - New lovers",2393189,"paid","desktop","US","female",6,165,1,1,165
+"4 - New lovers",2405259,"paid","desktop","US","female",46,165,1,1,165
+"4 - New lovers",2406951,"paid","desktop","US","female",49,165,1,1,165
+"4 - New lovers",2410638,"organic search","desktop","US","female",59,165,1,1,165
+"4 - New lovers",2439889,"other","mobile","US","female",50,165,1,1,165
+"4 - New lovers",2445317,"paid","desktop","US","male",30,165,1,1,165
+"4 - New lovers",2453472,"paid","desktop","US","female",47,165,1,1,165
+"4 - New lovers",2466119,"organic search","desktop","US","female",43,165,1,1,165
+"4 - New lovers",2474824,"organic search","mobile","international","female",43,165,1,1,165
+"4 - New lovers",2478697,"direct","desktop","US","female",43,165,1,1,165
+"4 - New lovers",2484377,"organic search","mobile","international","female",42,165,1,1,165
+"4 - New lovers",2491689,"organic search","mobile","international","female",40,165,1,1,165
+"4 - New lovers",2497276,"direct","desktop","US","female",35,165,1,1,165
+"4 - New lovers",2498470,"paid","desktop","international","female",38,165,1,1,165
+"4 - New lovers",2504564,"organic search","desktop","US","female",31,165,1,1,165
+"4 - New lovers",2514951,"direct","desktop","US","female",35,165,1,1,165
+"4 - New lovers",2530983,"paid","mobile","US","female",31,165,1,1,165
+"4 - New lovers",2532772,"direct","desktop","US","female",31,165,1,1,165
+"4 - New lovers",2540086,"paid","mobile","US","female",29,165,1,1,165
+"4 - New lovers",2542661,"paid","mobile","US","female",6,165,1,1,165
+"4 - New lovers",2546412,"paid","desktop","US","female",28,165,1,1,165
+"4 - New lovers",2546523,"organic search","desktop","US","female",28,165,1,1,165
+"4 - New lovers",2557596,"paid","desktop","US","female",25,165,1,1,165
+"4 - New lovers",2558170,"organic search","desktop","US","female",27,165,1,1,165
+"4 - New lovers",2566431,"organic search","desktop","US","female",25,165,1,1,165
+"4 - New lovers",2582973,"organic search","mobile","US","female",22,165,1,1,165
+"4 - New lovers",2589752,"direct","mobile","US","female",20,165,1,1,165
+"4 - New lovers",2619488,"direct","mobile","international","female",3,165,1,1,165
+"4 - New lovers",2621676,"other","mobile","US","female",7,165,1,1,165
+"4 - New lovers",2627219,"organic search","desktop","US","female",11,165,1,1,165
+"4 - New lovers",2633707,"paid","mobile","US","female",8,165,1,1,165
+"4 - New lovers",2634756,"direct","desktop","US","male",8,165,1,1,165
+"4 - New lovers",2635173,"organic search","desktop","international","female",7,165,1,1,165
+"4 - New lovers",352141,"direct","desktop","US","female",30,150,1,1,150
+"4 - New lovers",1487897,"organic search","desktop","US","female",15,150,1,1,150
+"4 - New lovers",1565164,"organic search","mobile","international","female",114,150,1,1,150
+"4 - New lovers",1610673,"direct","mobile","US","female",110,150,1,1,150
+"4 - New lovers",1869342,"direct","desktop","US","female",23,150,1,1,150
+"4 - New lovers",1870824,"organic search","desktop","US","female",168,150,1,1,150
+"4 - New lovers",2024545,"direct","desktop","US","female",191,150,1,1,150
+"4 - New lovers",2100407,"email","mobile","US","female",14,150,1,1,150
+"4 - New lovers",2236201,"direct","desktop","US","male",16,150,1,1,150
+"4 - New lovers",2336878,"organic search","desktop","international","female",46,150,1,1,150
+"4 - New lovers",2543344,"direct","desktop","US","male",29,150,1,1,150
+"4 - New lovers",2586179,"email","desktop","international","female",21,150,1,1,150
+"4 - New lovers",2591816,"direct","mobile","US","female",20,150,1,1,150
+"4 - New lovers",132461,"organic search","desktop","US","female",129,115,1,1,115
+"4 - New lovers",651237,"email","desktop","US","female",162,115,1,1,115
+"4 - New lovers",785781,"email","desktop","US","female",65,115,1,1,115
+"4 - New lovers",1483738,"paid","desktop","US","female",82,115,1,1,115
+"4 - New lovers",1816163,"direct","desktop","US","female",36,115,1,1,115
+"4 - New lovers",2012306,"paid","mobile","US","female",206,115,1,1,115
+"4 - New lovers",2019559,"direct","desktop","US","female",201,115,1,1,115
+"4 - New lovers",2028186,"paid","desktop","US","male",198,115,1,1,115
+"4 - New lovers",2028740,"organic search","mobile","US","male",198,115,1,1,115
+"4 - New lovers",2091050,"paid","desktop","US","male",49,115,1,1,115
+"4 - New lovers",2123069,"paid","desktop","US","female",155,115,1,1,115
+"4 - New lovers",2141116,"organic search","desktop","US","male",148,115,1,1,115
+"4 - New lovers",2142958,"paid","desktop","US","female",104,115,1,1,115
+"4 - New lovers",2149775,"other","desktop","US","male",144,115,1,1,115
+"4 - New lovers",2187104,"direct","desktop","US","female",132,115,1,1,115
+"4 - New lovers",2275703,"paid","desktop","US","female",103,115,1,1,115
+"4 - New lovers",2276402,"paid","desktop","US","male",103,115,1,1,115
+"4 - New lovers",2401990,"other","desktop","US","male",64,115,1,1,115
+"4 - New lovers",2472111,"paid","desktop","international","male",45,115,1,1,115
+"4 - New lovers",2477193,"direct","mobile","US","female",43,115,1,1,115
+"4 - New lovers",2484889,"organic search","desktop","US","male",42,115,1,1,115
+"4 - New lovers",2490319,"paid","mobile","US","male",40,115,1,1,115
+"4 - New lovers",2592360,"paid","mobile","US","female",7,115,1,1,115
+"4 - New lovers",2626321,"organic search","desktop","US","female",11,115,1,1,115
+"4 - New lovers",2642437,"direct","mobile","US","female",6,115,1,1,115
+"4 - New lovers",2646996,"paid","desktop","US","female",6,115,1,1,115
+"4 - New lovers",2155236,"direct","desktop","US","male",135,106,2,1,106
+"4 - New lovers",2371290,"organic search","desktop","international","female",74,105,2,1,105
+"4 - New lovers",2588858,"paid","desktop","US","female",20,103,2,1,103
+"4 - New lovers",180887,"direct","desktop","US","male",13,98,2,1,98
+"4 - New lovers",2386232,"paid","desktop","US","female",70,98,2,1,98
+"4 - New lovers",2620205,"other","desktop","US","male",13,96,2,1,96
+"4 - New lovers",1672987,"email","desktop","US","female",130,86,2,1,86
+"4 - New lovers",2144304,"organic search","desktop","international","female",146,86,2,1,86
+"4 - New lovers",2662219,"organic search","desktop","US","male",2,86,2,1,86
+"4 - New lovers",222455,"organic search","desktop","US","female",99,80,1,1,80
+"4 - New lovers",276600,"direct","desktop","US","female",47,80,1,1,80
+"4 - New lovers",400345,"organic search","mobile","US","male",69,80,2,1,80
+"4 - New lovers",494584,"direct","desktop","international","male",43,80,1,1,80
+"4 - New lovers",1488426,"direct","mobile","US","female",91,80,1,1,80
+"4 - New lovers",1503983,"other","desktop","US","male",209,80,1,1,80
+"4 - New lovers",1579277,"direct","mobile","international","male",138,80,1,1,80
+"4 - New lovers",1606565,"direct","mobile","US","female",126,80,1,1,80
+"4 - New lovers",1800738,"organic search","desktop","US","female",121,80,1,1,80
+"4 - New lovers",1956908,"organic search","desktop","US","female",140,80,1,1,80
+"4 - New lovers",1958174,"organic search","desktop","US","male",117,80,1,1,80
+"4 - New lovers",1960873,"paid","desktop","US","female",123,80,1,1,80
+"4 - New lovers",2000106,"direct","desktop","US","male",142,80,1,1,80
+"4 - New lovers",2003819,"organic search","desktop","US","male",213,80,1,1,80
+"4 - New lovers",2004607,"direct","mobile","US","female",212,80,1,1,80
+"4 - New lovers",2006872,"organic search","desktop","international","female",208,80,1,1,80
+"4 - New lovers",2008042,"organic search","mobile","US","male",210,80,1,1,80
+"4 - New lovers",2019725,"direct","mobile","US","female",203,80,1,1,80
+"4 - New lovers",2030794,"paid","mobile","US","female",181,80,1,1,80
+"4 - New lovers",2031154,"organic search","desktop","international","female",178,80,1,1,80
+"4 - New lovers",2061666,"paid","desktop","US","female",180,80,1,1,80
+"4 - New lovers",2063784,"paid","desktop","US","male",181,80,1,1,80
+"4 - New lovers",2087759,"email","desktop","US","male",165,80,1,1,80
+"4 - New lovers",2131808,"other","mobile","US","male",143,80,1,1,80
+"4 - New lovers",2147032,"paid","mobile","international","male",113,80,1,1,80
+"4 - New lovers",2151193,"organic search","mobile","US","male",118,80,1,1,80
+"4 - New lovers",2156674,"organic search","desktop","US","male",142,80,1,1,80
+"4 - New lovers",2172516,"paid","desktop","international","male",137,80,1,1,80
+"4 - New lovers",2181156,"paid","desktop","US","male",134,80,1,1,80
+"4 - New lovers",2187960,"paid","desktop","US","male",132,80,1,1,80
+"4 - New lovers",2204472,"direct","mobile","US","female",126,80,1,1,80
+"4 - New lovers",2206078,"organic search","desktop","US","female",125,80,1,1,80
+"4 - New lovers",2211706,"organic search","desktop","US","female",124,80,1,1,80
+"4 - New lovers",2230886,"direct","desktop","US","male",102,80,1,1,80
+"4 - New lovers",2263268,"organic search","desktop","US","female",108,80,1,1,80
+"4 - New lovers",2265303,"paid","mobile","international","female",46,80,1,1,80
+"4 - New lovers",2271545,"paid","desktop","US","male",105,80,1,1,80
+"4 - New lovers",2282496,"paid","desktop","US","female",101,80,1,1,80
+"4 - New lovers",2285298,"paid","mobile","US","female",97,80,1,1,80
+"4 - New lovers",2315785,"direct","mobile","US","female",93,80,1,1,80
+"4 - New lovers",2322874,"direct","desktop","US","female",91,80,1,1,80
+"4 - New lovers",2327233,"organic search","mobile","US","female",90,80,1,1,80
+"4 - New lovers",2330620,"paid","desktop","US","female",87,80,1,1,80
+"4 - New lovers",2333370,"organic search","desktop","international","female",88,80,1,1,80
+"4 - New lovers",2342907,"organic search","desktop","US","male",85,80,1,1,80
+"4 - New lovers",2356772,"paid","desktop","US","female",80,80,1,1,80
+"4 - New lovers",2376766,"paid","desktop","US","male",72,80,1,1,80
+"4 - New lovers",2377586,"paid","desktop","US","female",73,80,1,1,80
+"4 - New lovers",2387625,"paid","mobile","US","male",4,80,1,1,80
+"4 - New lovers",2393460,"paid","desktop","US","female",68,80,1,1,80
+"4 - New lovers",2420147,"organic search","desktop","international","female",58,80,1,1,80
+"4 - New lovers",2429794,"organic search","desktop","US","female",55,80,1,1,80
+"4 - New lovers",2470016,"paid","desktop","US","female",45,80,1,1,80
+"4 - New lovers",2470484,"direct","mobile","US","female",45,80,1,1,80
+"4 - New lovers",2478886,"paid","desktop","US","female",43,80,1,1,80
+"4 - New lovers",2481800,"email","desktop","US","female",41,80,1,1,80
+"4 - New lovers",2481994,"other","desktop","US","female",43,80,1,1,80
+"4 - New lovers",2493856,"paid","mobile","US","female",31,80,1,1,80
+"4 - New lovers",2498691,"paid","desktop","US","male",38,80,1,1,80
+"4 - New lovers",2501879,"direct","desktop","US","male",38,80,1,1,80
+"4 - New lovers",2509004,"direct","mobile","US","female",23,80,1,1,80
+"4 - New lovers",2519706,"organic search","desktop","US","male",34,80,1,1,80
+"4 - New lovers",2524966,"direct","desktop","international","male",33,80,1,1,80
+"4 - New lovers",2525005,"paid","desktop","US","male",33,80,1,1,80
+"4 - New lovers",2566619,"direct","desktop","US","female",25,80,1,1,80
+"4 - New lovers",2573314,"direct","mobile","US","female",24,80,1,1,80
+"4 - New lovers",2579881,"other","desktop","US","female",22,80,1,1,80
+"4 - New lovers",2583995,"direct","desktop","US","female",21,80,1,1,80
+"4 - New lovers",2613566,"other","desktop","US","male",15,80,1,1,80
+"4 - New lovers",2614639,"direct","mobile","US","male",15,80,1,1,80
+"4 - New lovers",2632742,"organic search","desktop","US","male",7,80,1,1,80
+"4 - New lovers",2649459,"direct","desktop","US","female",6,80,1,1,80
+"4 - New lovers",1523140,"email","desktop","US","female",186,78,1,1,78
+"4 - New lovers",1613224,"direct","desktop","international","female",203,78,1,1,78
+"4 - New lovers",1801079,"other","mobile","international","female",212,78,1,1,78
+"4 - New lovers",1948357,"direct","desktop","US","female",5,78,1,1,78
+"4 - New lovers",2001979,"organic search","desktop","US","female",214,78,1,1,78
+"4 - New lovers",2056136,"paid","desktop","US","male",185,78,1,1,78
+"4 - New lovers",2094505,"other","desktop","US","male",166,78,1,1,78
+"4 - New lovers",2104941,"organic search","mobile","US","female",162,78,1,1,78
+"4 - New lovers",2214142,"paid","desktop","US","male",123,78,1,1,78
+"4 - New lovers",2216547,"organic search","mobile","US","female",122,78,1,1,78
+"4 - New lovers",2253017,"paid","desktop","US","female",111,78,1,1,78
+"4 - New lovers",2397406,"paid","desktop","US","female",66,78,1,1,78
+"4 - New lovers",2407285,"organic search","desktop","US","female",47,78,1,1,78
+"4 - New lovers",2461147,"organic search","desktop","US","female",38,78,1,1,78
+"4 - New lovers",2468514,"paid","mobile","US","female",45,78,1,1,78
+"4 - New lovers",2501731,"paid","desktop","US","female",38,78,1,1,78
+"4 - New lovers",2542646,"direct","desktop","US","female",29,78,1,1,78
+"4 - New lovers",2566764,"direct","desktop","US","female",25,78,1,1,78
+"4 - New lovers",2581647,"direct","desktop","US","female",22,78,1,1,78
+"4 - New lovers",2584222,"paid","desktop","US","male",21,78,1,1,78
+"4 - New lovers",2584718,"direct","desktop","US","male",21,78,1,1,78
+"4 - New lovers",2606061,"paid","desktop","US","female",16,78,1,1,78
+"4 - New lovers",2608359,"direct","mobile","US","male",16,78,1,1,78
+"4 - New lovers",2081179,"organic search","desktop","US","female",131,76,2,1,76
+"4 - New lovers",2086408,"paid","mobile","US","female",151,76,2,1,76
+"4 - New lovers",2413831,"other","mobile","international","male",58,76,4,1,76
+"4 - New lovers",2220475,"paid","desktop","US","female",120,73,2,1,73
+"4 - New lovers",2517700,"paid","desktop","US","male",35,73,2,1,73
+"4 - New lovers",1671997,"paid","mobile","US","female",118,70,1,1,70
+"4 - New lovers",2066460,"organic search","mobile","US","female",180,70,1,1,70
+"4 - New lovers",2113340,"organic search","mobile","US","female",149,70,1,1,70
+"4 - New lovers",2133101,"organic search","desktop","US","female",133,70,1,1,70
+"4 - New lovers",2160773,"paid","mobile","US","female",141,70,2,1,70
+"4 - New lovers",2224449,"organic search","desktop","US","female",119,70,1,1,70
+"4 - New lovers",2360284,"paid","desktop","US","female",79,70,1,1,70
+"4 - New lovers",2560713,"direct","desktop","US","male",27,70,1,1,70
+"4 - New lovers",908952,"paid","desktop","US","male",207,68,1,1,68
+"4 - New lovers",966155,"direct","mobile","US","female",26,68,1,1,68
+"4 - New lovers",1020765,"paid","desktop","US","female",68,68,1,1,68
+"4 - New lovers",1290479,"direct","mobile","US","female",78,68,1,1,68
+"4 - New lovers",1306246,"direct","desktop","international","female",109,68,1,1,68
+"4 - New lovers",1386577,"other","mobile","US","female",141,68,1,1,68
+"4 - New lovers",1440522,"email","desktop","US","female",214,68,1,1,68
+"4 - New lovers",1520819,"direct","desktop","US","female",150,68,1,1,68
+"4 - New lovers",1593786,"paid","desktop","US","female",162,68,1,1,68
+"4 - New lovers",1628173,"organic search","desktop","US","male",37,68,1,1,68
+"4 - New lovers",1648327,"paid","desktop","international","female",117,68,1,1,68
+"4 - New lovers",1687546,"organic search","desktop","US","female",203,68,1,1,68
+"4 - New lovers",1697126,"paid","desktop","US","female",181,68,1,1,68
+"4 - New lovers",1949529,"direct","desktop","US","male",185,68,1,1,68
+"4 - New lovers",2012654,"organic search","desktop","US","female",90,68,1,1,68
+"4 - New lovers",2020726,"organic search","desktop","US","female",203,68,1,1,68
+"4 - New lovers",2031778,"direct","desktop","US","male",196,68,1,1,68
+"4 - New lovers",2042436,"organic search","desktop","US","male",154,68,1,1,68
+"4 - New lovers",2051511,"paid","desktop","US","female",187,68,1,1,68
+"4 - New lovers",2057178,"organic search","desktop","US","female",184,68,1,1,68
+"4 - New lovers",2080143,"paid","mobile","US","female",45,68,1,1,68
+"4 - New lovers",2081668,"organic search","desktop","US","female",172,68,1,1,68
+"4 - New lovers",2087899,"organic search","mobile","US","male",169,68,1,1,68
+"4 - New lovers",2088334,"paid","desktop","US","male",169,68,1,1,68
+"4 - New lovers",2088571,"paid","mobile","US","female",168,68,1,1,68
+"4 - New lovers",2102592,"paid","desktop","US","female",118,68,1,1,68
+"4 - New lovers",2102813,"other","desktop","US","male",160,68,1,1,68
+"4 - New lovers",2106458,"organic search","mobile","US","male",151,68,1,1,68
+"4 - New lovers",2123023,"direct","mobile","US","female",146,68,1,1,68
+"4 - New lovers",2132165,"paid","mobile","US","female",40,68,1,1,68
+"4 - New lovers",2140981,"paid","mobile","US","male",148,68,1,1,68
+"4 - New lovers",2146312,"email","desktop","US","female",146,68,1,1,68
+"4 - New lovers",2147555,"paid","mobile","US","male",145,68,1,1,68
+"4 - New lovers",2149728,"organic search","mobile","US","male",144,68,1,1,68
+"4 - New lovers",2151408,"organic search","desktop","US","female",144,68,1,1,68
+"4 - New lovers",2169242,"paid","desktop","US","female",138,68,1,1,68
+"4 - New lovers",2170473,"paid","mobile","US","female",25,68,1,1,68
+"4 - New lovers",2175479,"paid","mobile","US","female",136,68,1,1,68
+"4 - New lovers",2177675,"organic search","desktop","US","female",131,68,1,1,68
+"4 - New lovers",2178166,"paid","mobile","US","female",20,68,1,1,68
+"4 - New lovers",2190123,"organic search","desktop","US","female",131,68,1,1,68
+"4 - New lovers",2192753,"organic search","mobile","US","female",89,68,1,1,68
+"4 - New lovers",2198526,"paid","desktop","US","female",125,68,1,1,68
+"4 - New lovers",2214189,"paid","mobile","US","female",123,68,1,1,68
+"4 - New lovers",2214306,"paid","mobile","US","female",123,68,1,1,68
+"4 - New lovers",2223919,"organic search","desktop","US","male",119,68,1,1,68
+"4 - New lovers",2237164,"organic search","mobile","US","female",113,68,1,1,68
+"4 - New lovers",2240082,"paid","desktop","US","female",109,68,1,1,68
+"4 - New lovers",2253501,"paid","desktop","US","female",104,68,1,1,68
+"4 - New lovers",2263429,"paid","mobile","US","female",108,68,1,1,68
+"4 - New lovers",2264149,"organic search","desktop","US","male",107,68,1,1,68
+"4 - New lovers",2272919,"other","desktop","US","male",60,68,1,1,68
+"4 - New lovers",2280956,"paid","desktop","US","female",101,68,1,1,68
+"4 - New lovers",2289515,"paid","desktop","international","male",98,68,1,1,68
+"4 - New lovers",2312676,"other","desktop","US","female",94,68,1,1,68
+"4 - New lovers",2313824,"direct","mobile","US","female",23,68,1,1,68
+"4 - New lovers",2314764,"direct","desktop","US","female",93,68,1,1,68
+"4 - New lovers",2328162,"paid","desktop","US","female",89,68,1,1,68
+"4 - New lovers",2353497,"direct","desktop","US","female",23,68,1,1,68
+"4 - New lovers",2362384,"other","desktop","international","female",78,68,1,1,68
+"4 - New lovers",2365537,"paid","mobile","US","female",76,68,1,1,68
+"4 - New lovers",2379662,"direct","mobile","US","female",72,68,1,1,68
+"4 - New lovers",2404925,"paid","desktop","US","female",55,68,1,1,68
+"4 - New lovers",2407200,"paid","desktop","US","female",62,68,1,1,68
+"4 - New lovers",2409745,"paid","desktop","US","female",61,68,1,1,68
+"4 - New lovers",2423947,"organic search","desktop","US","male",57,68,1,1,68
+"4 - New lovers",2440670,"paid","desktop","US","female",25,68,1,1,68
+"4 - New lovers",2452059,"organic search","desktop","US","female",49,68,1,1,68
+"4 - New lovers",2481392,"direct","desktop","US","female",38,68,1,1,68
+"4 - New lovers",2500051,"other","desktop","US","male",38,68,1,1,68
+"4 - New lovers",2506423,"paid","mobile","US","male",37,68,1,1,68
+"4 - New lovers",2511050,"organic search","desktop","US","female",36,68,1,1,68
+"4 - New lovers",2519999,"organic search","desktop","US","male",34,68,1,1,68
+"4 - New lovers",2531987,"paid","desktop","US","female",31,68,1,1,68
+"4 - New lovers",2535627,"paid","mobile","US","female",30,68,1,1,68
+"4 - New lovers",2539721,"paid","mobile","US","female",29,68,1,1,68
+"4 - New lovers",2540826,"paid","desktop","US","female",29,68,1,1,68
+"4 - New lovers",2547612,"direct","desktop","US","male",28,68,1,1,68
+"4 - New lovers",2563082,"direct","mobile","US","female",26,68,1,1,68
+"4 - New lovers",2571558,"paid","desktop","US","female",24,68,1,1,68
+"4 - New lovers",2585310,"direct","desktop","US","female",21,68,1,1,68
+"4 - New lovers",2600145,"direct","mobile","international","male",18,68,1,1,68
+"4 - New lovers",2601573,"paid","desktop","US","male",17,68,1,1,68
+"4 - New lovers",2601774,"other","desktop","US","female",17,68,1,1,68
+"4 - New lovers",2602183,"paid","desktop","US","female",17,68,1,1,68
+"4 - New lovers",2604138,"direct","desktop","US","male",17,68,1,1,68
+"4 - New lovers",2604848,"paid","desktop","US","male",16,68,1,1,68
+"4 - New lovers",2606258,"direct","desktop","US","male",15,68,1,1,68
+"4 - New lovers",2611145,"direct","desktop","US","male",15,68,1,1,68
+"4 - New lovers",2614909,"direct","desktop","US","male",14,68,1,1,68
+"4 - New lovers",2617492,"organic search","desktop","US","male",14,68,1,1,68
+"4 - New lovers",2622231,"organic search","desktop","US","female",13,68,1,1,68
+"4 - New lovers",2628469,"direct","desktop","US","female",9,68,1,1,68
+"4 - New lovers",2629707,"paid","mobile","US","female",10,68,1,1,68
+"4 - New lovers",2666120,"paid","desktop","US","male",1,68,1,1,68
+"4 - New lovers",1382056,"organic search","desktop","US","male",144,65,1,1,65
+"4 - New lovers",1384156,"organic search","desktop","US","male",92,65,1,1,65
+"4 - New lovers",1759543,"paid","desktop","US","female",83,65,1,1,65
+"4 - New lovers",2096235,"paid","mobile","US","female",133,65,1,1,65
+"4 - New lovers",2112791,"organic search","desktop","US","male",88,65,1,1,65
+"4 - New lovers",2120471,"direct","mobile","US","female",150,65,1,1,65
+"4 - New lovers",2148205,"paid","desktop","US","female",145,65,1,1,65
+"4 - New lovers",2271954,"organic search","desktop","US","female",105,65,1,1,65
+"4 - New lovers",2277043,"organic search","desktop","US","female",103,65,1,1,65
+"4 - New lovers",2281530,"other","desktop","US","male",101,65,1,1,65
+"4 - New lovers",2340159,"paid","desktop","US","female",85,65,1,1,65
+"4 - New lovers",2368067,"paid","desktop","US","female",77,65,1,1,65
+"4 - New lovers",2410234,"paid","desktop","US","female",61,65,1,1,65
+"4 - New lovers",2419213,"organic search","desktop","US","male",25,65,1,1,65
+"4 - New lovers",2467207,"direct","desktop","US","female",46,65,1,1,65
+"4 - New lovers",2560091,"direct","desktop","US","female",27,65,1,1,65
+"4 - New lovers",2599273,"direct","desktop","US","male",18,65,1,1,65
+"4 - New lovers",2603792,"organic search","desktop","international","female",17,65,1,1,65
+"4 - New lovers",2611248,"paid","desktop","US","female",15,65,1,1,65
+"4 - New lovers",2611530,"direct","desktop","US","female",15,65,1,1,65
+"4 - New lovers",2628321,"paid","mobile","US","male",7,65,1,1,65
+"4 - New lovers",2634491,"other","desktop","international","male",8,65,1,1,65
+"4 - New lovers",2471368,"organic search","desktop","US","male",30,63,2,1,63
+"4 - New lovers",647125,"direct","desktop","US","female",120,60,1,1,60
+"4 - New lovers",1299319,"email","mobile","US","female",60,60,1,1,60
+"4 - New lovers",1393113,"direct","desktop","US","female",119,60,1,1,60
+"4 - New lovers",1599774,"organic search","desktop","US","female",33,60,1,1,60
+"4 - New lovers",2137513,"organic search","desktop","US","female",89,60,1,1,60
+"4 - New lovers",2157159,"direct","desktop","US","female",140,60,1,1,60
+"4 - New lovers",2177862,"paid","mobile","US","female",135,60,1,1,60
+"4 - New lovers",2202817,"direct","desktop","US","female",106,60,1,1,60
+"4 - New lovers",2216277,"other","desktop","international","female",110,60,1,1,60
+"4 - New lovers",2245996,"paid","desktop","US","female",106,60,1,1,60
+"4 - New lovers",2301750,"paid","desktop","international","female",91,60,1,1,60
+"4 - New lovers",2314360,"paid","mobile","international","female",71,60,1,1,60
+"4 - New lovers",2341758,"direct","desktop","US","female",85,60,1,1,60
+"4 - New lovers",2344687,"direct","desktop","US","female",84,60,1,1,60
+"4 - New lovers",2405456,"paid","desktop","US","female",63,60,1,1,60
+"4 - New lovers",2405917,"organic search","mobile","US","female",3,60,1,1,60
+"4 - New lovers",2416196,"direct","desktop","US","female",59,60,1,1,60
+"4 - New lovers",2471968,"organic search","mobile","international","female",32,60,1,1,60
+"4 - New lovers",2496196,"paid","desktop","US","female",39,60,1,1,60
+"4 - New lovers",2500779,"paid","mobile","US","female",38,60,1,1,60
+"4 - New lovers",2593600,"direct","desktop","US","male",19,60,1,1,60
+"4 - New lovers",2624930,"direct","mobile","US","female",12,60,1,1,60
+"4 - New lovers",1099879,"organic search","mobile","international","male",200,58,1,1,58
+"4 - New lovers",1695196,"paid","desktop","US","female",93,58,1,1,58
+"4 - New lovers",2070280,"paid","desktop","US","female",178,58,1,1,58
+"4 - New lovers",2087611,"paid","desktop","US","female",167,58,1,1,58
+"4 - New lovers",2129320,"direct","desktop","US","female",28,58,1,1,58
+"4 - New lovers",2160187,"organic search","desktop","US","female",141,58,1,1,58
+"4 - New lovers",2199462,"other","desktop","US","female",128,58,1,1,58
+"4 - New lovers",2209464,"direct","desktop","US","male",124,58,1,1,58
+"4 - New lovers",2332978,"direct","desktop","international","male",88,58,1,1,58
+"4 - New lovers",2351563,"paid","mobile","US","female",82,58,1,1,58
+"4 - New lovers",2479714,"other","mobile","international","female",41,58,1,1,58
+"4 - New lovers",2522674,"direct","mobile","US","female",33,58,1,1,58
+"4 - New lovers",2568344,"paid","desktop","US","female",25,58,1,1,58
+"4 - New lovers",2595162,"other","desktop","US","female",19,58,1,1,58
+"4 - New lovers",1450363,"organic search","desktop","US","female",47,55,1,1,55
+"4 - New lovers",2102656,"paid","desktop","US","female",139,55,1,1,55
+"4 - New lovers",2178476,"paid","mobile","US","female",130,55,1,1,55
+"4 - New lovers",2210764,"paid","desktop","US","female",92,110,2,2,55
+"4 - New lovers",2329453,"paid","desktop","US","male",89,55,1,1,55
+"4 - New lovers",2423795,"direct","desktop","US","male",38,55,1,1,55
+"4 - New lovers",2464974,"organic search","desktop","international","female",46,55,1,1,55
+"4 - New lovers",485245,"direct","desktop","US","female",24,48,1,1,48
+"4 - New lovers",588100,"direct","desktop","US","female",136,48,1,1,48
+"4 - New lovers",747546,"paid","mobile","US","female",31,48,1,1,48
+"4 - New lovers",886370,"paid","desktop","US","female",101,48,1,1,48
+"4 - New lovers",1575162,"paid","desktop","US","female",90,48,1,1,48
+"4 - New lovers",1576362,"direct","desktop","US","female",36,48,1,1,48
+"4 - New lovers",1656421,"email","mobile","US","female",18,48,1,1,48
+"4 - New lovers",1717675,"organic search","mobile","US","female",74,48,1,1,48
+"4 - New lovers",1822567,"direct","desktop","US","female",14,48,1,1,48
+"4 - New lovers",1829054,"email","desktop","US","female",25,48,1,1,48
+"4 - New lovers",1833798,"paid","mobile","US","female",139,48,1,1,48
+"4 - New lovers",1951428,"paid","mobile","US","male",150,48,1,1,48
+"4 - New lovers",1982521,"paid","desktop","US","female",25,48,1,1,48
+"4 - New lovers",1989793,"email","mobile","US","female",38,48,1,1,48
+"4 - New lovers",2000260,"direct","mobile","US","female",179,48,1,1,48
+"4 - New lovers",2003480,"organic search","mobile","US","female",46,48,1,1,48
+"4 - New lovers",2038562,"paid","desktop","US","female",186,48,1,1,48
+"4 - New lovers",2045669,"paid","mobile","US","male",166,96,2,2,48
+"4 - New lovers",2060174,"paid","mobile","international","female",182,48,1,1,48
+"4 - New lovers",2085593,"paid","mobile","US","female",137,48,1,1,48
+"4 - New lovers",2143388,"organic search","desktop","US","male",147,48,1,1,48
+"4 - New lovers",2156609,"direct","mobile","US","male",140,48,1,1,48
+"4 - New lovers",2159158,"organic search","mobile","US","female",141,48,1,1,48
+"4 - New lovers",2163001,"other","desktop","international","male",115,48,1,1,48
+"4 - New lovers",2167750,"paid","mobile","US","female",138,48,1,1,48
+"4 - New lovers",2177112,"direct","mobile","US","male",74,48,1,1,48
+"4 - New lovers",2182541,"organic search","desktop","US","female",134,48,1,1,48
+"4 - New lovers",2184985,"organic search","desktop","US","male",124,48,1,1,48
+"4 - New lovers",2200970,"direct","desktop","US","male",127,48,1,1,48
+"4 - New lovers",2214727,"organic search","desktop","US","female",123,48,1,1,48
+"4 - New lovers",2215474,"direct","desktop","international","female",120,48,1,1,48
+"4 - New lovers",2221075,"organic search","desktop","US","female",120,48,1,1,48
+"4 - New lovers",2251057,"other","desktop","US","male",112,48,1,1,48
+"4 - New lovers",2291997,"organic search","desktop","US","female",9,48,1,1,48
+"4 - New lovers",2303595,"paid","mobile","US","female",12,48,1,1,48
+"4 - New lovers",2347551,"other","desktop","international","female",84,48,1,1,48
+"4 - New lovers",2381962,"direct","desktop","US","male",71,48,1,1,48
+"4 - New lovers",2410722,"paid","desktop","US","female",61,48,1,1,48
+"4 - New lovers",2468671,"direct","desktop","international","male",45,48,1,1,48
+"4 - New lovers",2500524,"organic search","desktop","US","male",38,48,1,1,48
+"4 - New lovers",2500564,"other","desktop","international","female",38,48,1,1,48
+"4 - New lovers",2515345,"paid","desktop","US","female",34,48,1,1,48
+"4 - New lovers",2519805,"organic search","desktop","international","female",34,48,1,1,48
+"4 - New lovers",2534826,"direct","mobile","US","female",29,48,1,1,48
+"4 - New lovers",2558182,"paid","desktop","US","male",27,48,1,1,48
+"4 - New lovers",2559873,"organic search","desktop","US","female",26,48,1,1,48
+"4 - New lovers",2566589,"direct","desktop","US","female",22,48,1,1,48
+"4 - New lovers",2569585,"direct","mobile","US","female",25,48,1,1,48
+"4 - New lovers",2571283,"direct","mobile","US","male",24,48,1,1,48
+"4 - New lovers",2572474,"paid","desktop","US","male",24,48,1,1,48
+"4 - New lovers",2575591,"paid","desktop","US","female",23,48,1,1,48
+"4 - New lovers",2576578,"paid","desktop","US","female",23,48,1,1,48
+"4 - New lovers",2578779,"paid","mobile","US","male",22,48,1,1,48
+"4 - New lovers",2586242,"paid","mobile","US","female",21,48,1,1,48
+"4 - New lovers",2589929,"paid","desktop","US","male",20,48,1,1,48
+"4 - New lovers",2590199,"paid","desktop","US","female",20,48,1,1,48
+"4 - New lovers",2590945,"other","mobile","US","female",20,48,1,1,48
+"4 - New lovers",2601198,"direct","mobile","US","female",16,48,1,1,48
+"4 - New lovers",2610836,"paid","desktop","US","female",15,48,1,1,48
+"4 - New lovers",2616395,"direct","mobile","US","female",14,48,1,1,48
+"4 - New lovers",2621779,"direct","mobile","US","female",13,48,1,1,48
+"4 - New lovers",2646558,"paid","desktop","US","male",6,48,1,1,48
+"4 - New lovers",1789993,"paid","desktop","US","male",38,86,2,2,43
+"4 - New lovers",2509371,"direct","mobile","US","female",15,83,2,2,41.5
+"4 - New lovers",932991,"direct","mobile","US","female",149,40,1,1,40
+"4 - New lovers",1789635,"paid","desktop","US","female",194,40,1,1,40
+"4 - New lovers",2023518,"paid","desktop","US","female",201,40,1,1,40
+"4 - New lovers",2029073,"organic search","desktop","US","female",194,40,1,1,40
+"4 - New lovers",2031221,"paid","mobile","US","male",196,40,1,1,40
+"4 - New lovers",2038137,"direct","mobile","US","female",192,40,1,1,40
+"4 - New lovers",2138010,"direct","mobile","US","female",149,40,1,1,40
+"4 - New lovers",2229216,"direct","desktop","US","male",117,40,1,1,40
+"4 - New lovers",359967,"email","mobile","US","female",148,38,1,1,38
+"4 - New lovers",576893,"organic search","desktop","US","female",135,38,1,1,38
+"4 - New lovers",815768,"email","desktop","US","female",25,38,1,1,38
+"4 - New lovers",1043474,"direct","mobile","US","female",81,38,1,1,38
+"4 - New lovers",1352434,"email","mobile","US","male",151,38,1,1,38
+"4 - New lovers",1353499,"paid","desktop","US","female",131,38,1,1,38
+"4 - New lovers",1522576,"email","mobile","US","female",30,38,1,1,38
+"4 - New lovers",1557325,"email","mobile","US","female",144,38,1,1,38
+"4 - New lovers",1776459,"email","mobile","US","female",20,38,1,1,38
+"4 - New lovers",1803338,"paid","desktop","US","female",131,38,1,1,38
+"4 - New lovers",2068912,"email","desktop","US","female",114,38,1,1,38
+"4 - New lovers",2103618,"other","mobile","US","female",52,38,1,1,38
+"4 - New lovers",2122205,"email","desktop","US","female",151,38,1,1,38
+"4 - New lovers",2122208,"organic search","mobile","US","female",151,38,1,1,38
+"4 - New lovers",2138785,"paid","desktop","US","male",149,38,1,1,38
+"4 - New lovers",2139608,"email","mobile","US","female",148,38,1,1,38
+"4 - New lovers",2147849,"paid","mobile","US","female",131,38,1,1,38
+"4 - New lovers",2157056,"organic search","mobile","US","female",141,38,1,1,38
+"4 - New lovers",2175368,"direct","desktop","US","female",129,76,2,2,38
+"4 - New lovers",2185913,"organic search","desktop","US","male",132,38,1,1,38
+"4 - New lovers",2186976,"paid","desktop","US","female",132,38,1,1,38
+"4 - New lovers",2203274,"organic search","desktop","US","female",127,38,1,1,38
+"4 - New lovers",2218016,"organic search","desktop","international","female",80,38,1,1,38
+"4 - New lovers",2255488,"paid","desktop","US","male",110,38,1,1,38
+"4 - New lovers",2257083,"direct","desktop","US","female",110,38,1,1,38
+"4 - New lovers",2284395,"other","desktop","US","female",98,38,1,1,38
+"4 - New lovers",2296504,"paid","desktop","US","female",97,38,1,1,38
+"4 - New lovers",2334331,"direct","desktop","US","female",87,38,1,1,38
+"4 - New lovers",2378718,"direct","desktop","US","female",73,38,1,1,38
+"4 - New lovers",2391394,"paid","desktop","US","female",68,38,1,1,38
+"4 - New lovers",2401729,"paid","mobile","US","female",62,38,1,1,38
+"4 - New lovers",2495703,"organic search","desktop","US","female",39,38,1,1,38
+"4 - New lovers",2535751,"direct","mobile","US","male",30,38,1,1,38
+"4 - New lovers",2564778,"paid","mobile","US","female",25,38,1,1,38
+"4 - New lovers",2593458,"organic search","mobile","US","male",18,38,1,1,38
+"4 - New lovers",2607240,"paid","mobile","US","female",16,38,1,1,38
+"4 - New lovers",2608923,"paid","mobile","US","male",16,38,1,1,38
+"4 - New lovers",2618195,"direct","mobile","US","female",14,38,1,1,38
+"4 - New lovers",1735499,"email","mobile","US","male",121,35,1,1,35
+"4 - New lovers",2039501,"direct","desktop","US","female",189,35,1,1,35
+"4 - New lovers",2085753,"organic search","desktop","US","female",170,35,1,1,35
+"4 - New lovers",2327622,"paid","mobile","US","female",89,35,1,1,35
+"4 - New lovers",2406975,"organic search","desktop","US","female",62,35,1,1,35
+"4 - New lovers",2418459,"paid","desktop","US","female",55,35,1,1,35
+"4 - New lovers",2484477,"paid","mobile","US","female",42,35,1,1,35
+"4 - New lovers",2562169,"other","desktop","US","female",24,35,1,1,35
+"4 - New lovers",2576610,"other","desktop","US","female",23,35,1,1,35
+"4 - New lovers",1736387,"paid","desktop","US","female",13,28,1,1,28
+"4 - New lovers",2509636,"other","desktop","US","male",36,28,1,1,28
+"4 - New lovers",2558840,"organic search","desktop","US","female",27,28,1,1,28
+"4 - New lovers",2592202,"other","mobile","US","female",14,28,1,1,28
+"4 - New lovers",1451106,"direct","desktop","US","male",69,25,1,1,25
+"4 - New lovers",1534383,"email","desktop","international","male",150,25,1,1,25
+"4 - New lovers",1560371,"direct","desktop","US","male",145,50,2,2,25
+"4 - New lovers",1850086,"email","mobile","US","female",148,25,1,1,25
+"4 - New lovers",1932156,"direct","desktop","US","female",132,25,1,1,25
+"4 - New lovers",2088200,"organic search","desktop","international","female",104,25,1,1,25
+"4 - New lovers",2145048,"organic search","desktop","US","male",146,25,1,1,25
+"4 - New lovers",2172982,"direct","mobile","US","female",137,25,1,1,25
+"4 - New lovers",2547322,"direct","desktop","US","female",28,25,1,1,25
+"4 - New lovers",2403452,"organic search","desktop","international","female",63,22,1,1,22
+"4 - New lovers",1957113,"paid","mobile","international","male",210,18,1,1,18
+"4 - New lovers",2025666,"organic search","desktop","US","female",200,18,1,1,18
+"4 - New lovers",2209142,"organic search","desktop","US","female",61,16,1,1,16
+"4 - New lovers",2254909,"paid","desktop","US","female",35,16,1,1,16
+"4 - New lovers",2433044,"other","desktop","US","male",54,16,1,1,16
+"4 - New lovers",2434711,"other","desktop","US","male",54,16,1,1,16
+"5 - Recent lovers",1745009,"organic search","mobile","US","female",3,188,2,1,188
+"5 - Recent lovers",1326427,"organic search","desktop","US","female",6,165,1,1,165
+"5 - Recent lovers",1456375,"direct","desktop","US","female",18,165,1,1,165
+"5 - Recent lovers",2267617,"organic search","desktop","US","male",11,165,1,1,165
+"5 - Recent lovers",2281941,"direct","mobile","US","female",3,165,1,1,165
+"5 - Recent lovers",2361946,"paid","desktop","US","female",18,165,1,1,165
+"5 - Recent lovers",1613771,"organic search","desktop","US","female",17,150,1,1,150
+"5 - Recent lovers",2289590,"direct","desktop","US","female",14,150,1,1,150
+"5 - Recent lovers",1562492,"paid","desktop","US","female",22,266,3,2,133
+"5 - Recent lovers",1722011,"other","desktop","US","female",25,248,3,2,124
+"5 - Recent lovers",1764570,"organic search","desktop","US","female",20,115,1,1,115
+"5 - Recent lovers",2574950,"paid","mobile","US","female",22,115,1,1,115
+"5 - Recent lovers",243763,"email","desktop","US","female",3,78,1,1,78
+"5 - Recent lovers",1435712,"direct","desktop","US","male",22,78,1,1,78
+"5 - Recent lovers",2032574,"email","mobile","US","female",11,68,1,1,68
+"5 - Recent lovers",2165239,"paid","mobile","US","female",16,68,1,1,68
+"5 - Recent lovers",2324891,"email","mobile","US","female",25,68,1,1,68
+"5 - Recent lovers",931396,"paid","desktop","US","female",16,65,1,1,65
+"5 - Recent lovers",2455064,"organic search","mobile","US","female",25,65,1,1,65
+"5 - Recent lovers",1732402,"paid","desktop","US","male",25,60,1,1,60
+"5 - Recent lovers",2076949,"organic search","desktop","US","female",19,60,1,1,60
+"5 - Recent lovers",2124494,"paid","desktop","US","female",26,60,1,1,60
+"5 - Recent lovers",2368839,"paid","mobile","US","female",6,60,1,1,60
+"5 - Recent lovers",2376129,"paid","desktop","US","female",21,60,1,1,60
+"5 - Recent lovers",637348,"organic search","desktop","US","female",9,48,1,1,48
+"5 - Recent lovers",1472811,"email","desktop","US","female",25,48,1,1,48
+"5 - Recent lovers",2214232,"email","mobile","US","female",25,48,1,1,48
+"5 - Recent lovers",2326836,"paid","desktop","US","female",25,48,1,1,48
+"5 - Recent lovers",2453377,"direct","desktop","US","female",24,48,1,1,48
+"5 - Recent lovers",476407,"direct","desktop","US","female",20,38,1,1,38
+"5 - Recent lovers",2085543,"organic search","mobile","US","female",18,76,2,2,38
+"5 - Recent lovers",2525014,"organic search","mobile","US","female",28,38,1,1,38
+"5 - Recent lovers",2614450,"direct","desktop","US","female",14,38,1,1,38
+"5 - Recent lovers",2419118,"organic search","desktop","US","female",14,73,2,2,36.5
+"5 - Recent lovers",2606345,"direct","mobile","US","male",16,28,1,1,28
+"5 - Recent lovers",2436582,"paid","mobile","US","female",28,18,1,1,18
