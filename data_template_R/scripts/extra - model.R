@@ -1,4 +1,4 @@
-# scrape data
+﻿# scrape data
 # include twitter handles
 # perform LDA
 # load to shiny app
@@ -19,10 +19,7 @@ library(ISLR)
 
 
 # Setup Twitter API credentials (removed)
-consumer_key <- "8XXBnKFuVGrH6E3PvRzyf843A"
-consumer_secret <- "s3IESA9RzaM3LCdIng55XC1A7FL2r2H19Hic55IqEvTwpl7CFn"
-access_token <- "127323083-RQ2PmFfHHeFubdLZpiyJDOBWwJT4398zJT8sHuWg"
-access_secret <- "3l8KTXsq0hmWfbo8eM1JaF5YnmzsXCOvIYm9oQ7uSAo1v"
+
 
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 tw <- twitteR::searchTwitter('#realDonaldTrump + #HillaryClinton', n = 1e4, since = '2016-11-08', retryOnRateLimit = 1e3)
